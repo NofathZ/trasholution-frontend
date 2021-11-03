@@ -24,3 +24,16 @@
 .input-column::placeholder {
   color: #969696;
 }
+
+.input-verif-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input-number-verification {
+  all: unset;
+  width: 40px;
+  border-bottom: 1px solid #818181;
+  text-align: center;
+}

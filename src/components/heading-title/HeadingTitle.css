@@ -1,6 +1,7 @@
 .heading-wrapper {
   display: flex;
   align-items: center;
+  padding-top: 26px;
 }
 
 .heading-icon {

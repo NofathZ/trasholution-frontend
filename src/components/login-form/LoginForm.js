@@ -1,5 +1,6 @@
 import InputForm from "../input-form/InputForm";
 import { InputRadio } from "../input-form/InputRadio";
+import { ButtonValid } from "../button/ButtonValid";
 import "./LoginForm.css";
 
 const LoginForm = () => {
@@ -83,7 +84,7 @@ const LoginForm = () => {
         </InputRadio>
       </div>
 
-      <button className="heading-five login-btn">Log In</button>
+      <ButtonValid className="heading-five">Log In</ButtonValid>
     </>
   );
 };

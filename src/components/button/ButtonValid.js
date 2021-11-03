@@ -1,4 +1,6 @@
-/* .login-btn {
+import styled from "styled-components";
+
+const ButtonValid = styled.button`
   background: none;
 	color: inherit;
 	border: none;
@@ -14,5 +16,7 @@
   color: white;
 
   margin: 20px auto 0 auto;
-  display: block;
-} */
+  display: block; 
+`;
+
+export { ButtonValid }

@@ -1,5 +1,6 @@
 import InputForm from "../input-form/InputForm"
 import { InputRadio } from "../input-form/InputRadio"
+import { ButtonValid } from "../button/ButtonValid"
 
 const RegisterForm = () => {
   return (
@@ -47,7 +48,7 @@ const RegisterForm = () => {
         </InputRadio>
       </div>
 
-      <button className="heading-five login-btn">Register</button>
+      <ButtonValid className="heading-five">Register</ButtonValid>
     </>
   )
 }
