@@ -1,5 +1,19 @@
 import React from 'react';
+import Layout from '../layout/Layout';
+import HeadingTitle from '../components/heading-title/HeadingTitle';
+import ThLogo from '../assets/th-logo.png'
+import RequestMenu from '../components/request/RequestMenu';
 
-const HalamanPenjemputanSampah = () => <h1 txAlign='center'>Masih dalam tahap pengembangan :)</h1>;
+const HalamanPenjemputanSampah = () => {
+  return (
+    <Layout>
+      <HeadingTitle>
+        <img src={ThLogo} alt="" />
+        <h3 className="heading-three" style={{ color: "#35BE80" }}>Penjemputan Sampah</h3>
+      </HeadingTitle>
+      <RequestMenu />
+    </Layout>
+  )
+}
 
 export default HalamanPenjemputanSampah;

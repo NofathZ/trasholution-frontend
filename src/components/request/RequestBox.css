@@ -1,0 +1,13 @@
+.request-wrapper {
+  width: 292px;
+  height: 96px;
+  background-color: #35BE80;
+  border-radius: 20px;
+  margin: 0 auto 14px auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
