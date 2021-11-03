@@ -12,3 +12,15 @@
   all: unset;
   width: 200px;
 }
+
+.input-column::-webkit-input-placeholder { /* Edge */
+  color: #969696;
+}
+
+.input-column:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #969696;
+}
+
+.input-column::placeholder {
+  color: #969696;
+}

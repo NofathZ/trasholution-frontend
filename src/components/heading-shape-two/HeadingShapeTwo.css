@@ -1,0 +1,13 @@
+.head-shape-2 {
+  background-image: url("../../assets/head-shape-2.svg");
+  background-position: right 30px;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 183px;
+}
+
+.heading-title-two {
+  color: #35BE80;
+  padding-top: 60px;
+  padding-left: 24px;
+}

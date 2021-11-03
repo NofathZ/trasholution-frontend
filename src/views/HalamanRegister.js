@@ -1,5 +1,15 @@
 import React from 'react';
+import Layout from '../layout/Layout';
+import HeadingShapeTwo from '../components/heading-shape-two/HeadingShapeTwo'
+import RegisterForm from '../components/register-form/RegisterForm'
 
-const HalamanRegister = () => <h1 txAlign='center'>Masih dalam tahap pengembangan :)</h1>;
+const HalamanRegister = () => {
+  return (
+    <Layout>
+      <HeadingShapeTwo />
+      <RegisterForm />
+    </Layout>
+  )
+}
 
 export default HalamanRegister;

@@ -4,7 +4,7 @@ const InputForm = (props) => {
   return (
     <div className="input-box lead-five">
       {props.children}
-      <input className="input-column" placeholder={props.placeholder} />
+      <input className="input-column" placeholder={props.placeholder} style={{margin: props.margin}} />
     </div>
   )
 }
