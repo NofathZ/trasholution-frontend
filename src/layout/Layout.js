@@ -2,7 +2,7 @@ import { LayoutWrapper } from "./Layout.element"
 
 const Layout = (props) => {
   return (
-    <LayoutWrapper>
+    <LayoutWrapper className={props.className}>
       { props.children }
     </LayoutWrapper>
   )

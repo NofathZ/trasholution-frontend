@@ -1,5 +1,17 @@
 import React from 'react';
+import Layout from '../layout/Layout'
+import HeadingShapeOne from '../components/heading-shape-one/HeadingShapeOne';
+import LoginForm from '../components/login-form/LoginForm'
 
-const HalamanLogin = () => <h1 txAlign='center'>Masih dalam tahap pengembangan :)</h1>;
+const HalamanLogin = () => {
+  return (
+    <>
+      <Layout>
+        <HeadingShapeOne />
+        <LoginForm />
+      </Layout>
+    </>
+  )
+};
 
 export default HalamanLogin;

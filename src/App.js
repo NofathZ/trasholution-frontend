@@ -1,10 +1,9 @@
-import Layout from './layout/Layout';
+import HalamanLogin from './views/HalamanLogin'
+import './assets/_variable.css';
 
 function App() {
   return (
-    <Layout>
-      {/* <h1>ofath</h1> */}
-    </Layout>
+    <HalamanLogin />
   );
 }
 

@@ -1,0 +1,13 @@
+.head-shape-1 {
+  background-image: url('../../assets/head-shape-1.svg');
+  background-position: left top;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+}
+
+.heading-title {
+  padding-top: 60px;
+  padding-left: 24px;
+  color: white;
+}
