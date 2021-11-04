@@ -150,3 +150,11 @@ p {
   font-size: 10px;
   line-height: 21px;
 }
+
+.lead-nine {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 6px;
+  line-height: 21px;
+}

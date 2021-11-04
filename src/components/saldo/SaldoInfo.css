@@ -1,0 +1,57 @@
+.saldo-info-wrapper {
+  margin-top: 19px;
+  margin-bottom: 7px;
+}
+
+.today-status {
+  width: 300px;
+  height: 163px;
+  background-color: #EDEDED;
+  border-radius: 10px;
+  display: flex;
+  margin: 7px auto 16px auto;
+}
+
+.percentation-status, .desc-status {
+  flex: 1;
+}
+
+.circle {
+  width: 103px;
+  height: 103px;
+  background-color: #EDEDED;
+  border: 6px solid #FFAE63;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hari-ini {
+  width: 32px;
+  height: 14px;
+  background-color: #C4C4C4;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.percentation-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.desc-status {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.saldo-title {
+  width: 300px;
+  margin: 0 auto;
+}
