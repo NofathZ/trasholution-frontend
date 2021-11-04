@@ -6,6 +6,7 @@ import HalamanUtama from './views/HalamanUtama'
 import DetailValidasiSampah from './views/DetailValidasiSampah'
 import FormJualSampah from './views/FormJualSampah'
 import FormPencairanSaldo from './views/FormPencairanSaldo'
+import HalamanUtamaTrashpicker from './views/HalamanUtamaTrashpicker'
 import './assets/_variable.css';
 import './App.css'
 
@@ -18,7 +19,8 @@ function App() {
     // <HalamanUtama />
     // <DetailValidasiSampah />
     // <FormJualSampah />
-    <FormPencairanSaldo />
+    // <FormPencairanSaldo />
+    <HalamanUtamaTrashpicker />
   );
 }
 
