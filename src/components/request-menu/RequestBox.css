@@ -10,3 +10,8 @@
   justify-content: space-around;
   align-items: center;
 }
+.line-break {
+  width: 292px;
+  border-bottom: 1px solid #DDDDDD;
+  margin: 14px auto 23px auto;
+}

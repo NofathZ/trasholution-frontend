@@ -10,9 +10,9 @@ function App() {
   return (
     // <HalamanLogin />
     // <HalamanRegister />
-    // <HalamanPenjemputanSampah />
+    <HalamanPenjemputanSampah />
     // <HalamanVerifikasi />
-    <HalamanUtama />
+    // <HalamanUtama />
   );
 }
 
