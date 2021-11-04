@@ -3,6 +3,7 @@ import HalamanRegister from './views/HalamanRegister'
 import HalamanPenjemputanSampah from './views/HalamanPenjemputanSampah'
 import HalamanVerifikasi from './views/HalamanVerifikasi'
 import HalamanUtama from './views/HalamanUtama'
+import DetailValidasiSampah from './views/DetailValidasiSampah'
 import './assets/_variable.css';
 import './App.css'
 
@@ -10,9 +11,10 @@ function App() {
   return (
     // <HalamanLogin />
     // <HalamanRegister />
-    <HalamanPenjemputanSampah />
+    // <HalamanPenjemputanSampah />
     // <HalamanVerifikasi />
     // <HalamanUtama />
+    <DetailValidasiSampah />
   );
 }
 

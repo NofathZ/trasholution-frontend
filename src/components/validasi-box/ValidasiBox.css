@@ -1,0 +1,47 @@
+.validasi-box {
+  width: 288px;
+  border-radius: 29px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+  box-sizing: border-box;
+  margin: 10px auto;
+}
+.row-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+.list-item-validasi {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+.lihat-btn {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+  width: 48px;
+  height: 17px;
+  background-color: #ACFFAD;
+  color: #8F8F8F;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line-break-validasi {
+  width: 100%;
+  border-bottom: 1px solid white;
+  margin-top: 50px;
+}

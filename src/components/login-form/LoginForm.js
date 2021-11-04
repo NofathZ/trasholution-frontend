@@ -81,7 +81,7 @@ const LoginForm = () => {
         </InputRadio>
       </div>
 
-      <ButtonValid className="heading-five">Log In</ButtonValid>
+      <ButtonValid className="heading-five" style={{ marginTop: "20px" }}>Log In</ButtonValid>
     </>
   );
 };

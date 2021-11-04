@@ -30,7 +30,7 @@ const HalamanVerifikasi = () => {
         <span style={{ color: "#35BE80" }}>Resend</span>
       </div>
 
-      <ButtonValid className="heading-five">Kirim</ButtonValid>
+      <ButtonValid className="heading-five" style={{marginTop:"20px"}}>Kirim</ButtonValid>
     </Layout>
   )
 }

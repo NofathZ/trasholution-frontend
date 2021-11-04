@@ -15,7 +15,7 @@ const ButtonValid = styled.button`
   background-color: #35BE80;
   color: white;
 
-  margin: 20px auto 0 auto;
+  margin: 0 auto;
   display: block; 
 `;
 
