@@ -16,6 +16,17 @@ p {
   vertical-align: baseline;
 }
 
+/* Color */
+.main-color-bg {
+  background-color: #35BE80;
+}
+.main-color {
+  color: #35BE80;
+}
+.secondary-color {
+  color: #969696;
+}
+
 /* Heading */
 .heading-one {
   font-family: "Poppins", sans-serif;

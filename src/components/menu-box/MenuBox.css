@@ -1,0 +1,9 @@
+.menu-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.menu-box > div {
+  margin: 13px 35px;
+}
