@@ -3,10 +3,11 @@ import Layout from '../layout/Layout';
 import ThLogo from '../assets/th-logo.png'
 import HeadingTitle from '../components/heading-title/HeadingTitle';
 import MenuBox from '../components/menu-box/MenuBox';
+import "./HalamanUtama.css"
 
 const HalamanUtama = () => {
   return (
-    <Layout>
+    <Layout className="bg-halaman-utama">
       <HeadingTitle>
         <img src={ThLogo} alt="" />
         <div />
