@@ -8,6 +8,7 @@ import FormJualSampah from './views/FormJualSampah'
 import FormPencairanSaldo from './views/FormPencairanSaldo'
 import HalamanUtamaTrashpicker from './views/HalamanUtamaTrashpicker'
 import ProfilPengguna from './views/ProfilPengguna'
+import ProfilTrashpicker from './views/ProfilTrashpicker'
 import './assets/_variable.css';
 import './App.css'
 
@@ -23,6 +24,7 @@ function App() {
     // <FormPencairanSaldo />
     // <HalamanUtamaTrashpicker />
     <ProfilPengguna />
+    // <ProfilTrashpicker />
   );
 }
 

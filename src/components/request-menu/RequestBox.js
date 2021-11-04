@@ -2,7 +2,7 @@ import './RequestBox.css'
 
 const RequestBox = (props) => {
   return (
-    <div className="request-wrapper main-color-bg">
+    <div className="request-wrapper main-color-bg" style={props.style}>
       <div>
         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M33.3333 14.5833C33.3333 19.1857 29.6024 22.9167 25 22.9167C20.3976 22.9167 16.6667 19.1857 16.6667 14.5833C16.6667 9.98096 20.3976 6.25 25 6.25C29.6024 6.25 33.3333 9.98096 33.3333 14.5833Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

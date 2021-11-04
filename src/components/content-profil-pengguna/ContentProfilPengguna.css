@@ -6,6 +6,7 @@
   margin: 0 auto;
   padding: 24px;
   margin-top: 33px;
+  box-sizing: border-box;
 }
 
 .riwayat-btn-active {
