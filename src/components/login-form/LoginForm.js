@@ -38,9 +38,8 @@ const LoginForm = () => {
         </svg>
       </InputForm>
       <h5
-        className="lead-five"
+        className="lead-five secondary-color"
         style={{
-          color: "#969696",
           textAlign: "center",
           marginTop: "15px",
           marginBottom: "30px",
@@ -59,8 +58,7 @@ const LoginForm = () => {
             value="pengguna"
           />
           <label
-            className="lead-five label-radio"
-            style={{ color: "#969696" }}
+            className="lead-five label-radio secondary-color"
             for="pengguna"
           >
             Pengguna
@@ -75,8 +73,7 @@ const LoginForm = () => {
             value="trashpicker"
           />
           <label
-            className="lead-five label-radio"
-            style={{ color: "#969696" }}
+            className="lead-five label-radio secondary-color"
             for="trashpicker"
           >
             Trashpicker

@@ -9,7 +9,7 @@ const HalamanPenjemputanSampah = () => {
     <Layout>
       <HeadingTitle>
         <img src={ThLogo} alt="" />
-        <h3 className="heading-three" style={{ color: "#35BE80" }}>Penjemputan Sampah</h3>
+        <h3 className="heading-three main-color">Penjemputan Sampah</h3>
       </HeadingTitle>
       <RequestMenu />
     </Layout>
