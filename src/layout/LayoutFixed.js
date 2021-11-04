@@ -2,7 +2,7 @@ import { LayoutFixedWrapper } from "./Layout.element"
 
 const LayoutFixed = (props) => {
   return (
-    <LayoutFixedWrapper>
+    <LayoutFixedWrapper className={props.className}>
       { props.children }
     </LayoutFixedWrapper>
   )
