@@ -4,6 +4,7 @@ import HalamanPenjemputanSampah from './views/HalamanPenjemputanSampah'
 import HalamanVerifikasi from './views/HalamanVerifikasi'
 import HalamanUtama from './views/HalamanUtama'
 import DetailValidasiSampah from './views/DetailValidasiSampah'
+import FormJualSampah from './views/FormJualSampah'
 import './assets/_variable.css';
 import './App.css'
 
@@ -14,7 +15,8 @@ function App() {
     // <HalamanPenjemputanSampah />
     // <HalamanVerifikasi />
     // <HalamanUtama />
-    <DetailValidasiSampah />
+    // <DetailValidasiSampah />
+    <FormJualSampah />
   );
 }
 

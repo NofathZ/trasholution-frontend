@@ -1,0 +1,41 @@
+.form-input-sampah-box {
+  width: 302px;
+  min-height: 433px;
+  border-radius: 29px;
+  margin: 0 auto;
+  padding: 5px 0;
+  margin-top: 51px;
+}
+
+.row-box-input {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+.list-item-input {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+.input-sampah-column {
+  flex: 1;
+  all: unset;
+  border-bottom: 1px solid #E3E3E3;
+  width: 79px;
+  text-align: left;
+}
+.btn-add-item {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  background-color: #71EFA3;
+  margin: 22px auto 0 auto;
+}
