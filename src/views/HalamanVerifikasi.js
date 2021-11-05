@@ -21,8 +21,7 @@ const HalamanVerifikasi = () => {
         </svg>
       </div>
       <div className="secondary-color" style={{ width: "227px", margin: "0 auto", marginBottom: "78px" }}>
-        <span className="lead-five">Masukan OTP yang telah dikirim ke email </span>
-        <span className="heading-five">marlina@gmail.com</span>
+        <p className="lead-five" style={{ textAlign: "center" }}>Masukan OTP yang telah dikirim ke nomor telepon anda</p>
       </div>
       <InputVerif />
       <div className="lead-five" style={{ textAlign: "center", marginTop: "78px" }}>
@@ -30,7 +29,7 @@ const HalamanVerifikasi = () => {
         <span style={{ color: "#35BE80" }}>Resend</span>
       </div>
 
-      <ButtonValid className="heading-five" style={{marginTop:"20px"}}>Kirim</ButtonValid>
+      <ButtonValid className="heading-five" style={{ marginTop: "20px" }}>Kirim</ButtonValid>
     </Layout>
   )
 }

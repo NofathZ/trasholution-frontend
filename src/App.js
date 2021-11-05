@@ -17,13 +17,13 @@ function App() {
     // <HalamanLogin />
     // <HalamanRegister />
     // <HalamanPenjemputanSampah />
-    // <HalamanVerifikasi />
+    <HalamanVerifikasi />
     // <HalamanUtama />
     // <DetailValidasiSampah />
     // <FormJualSampah />
     // <FormPencairanSaldo />
     // <HalamanUtamaTrashpicker />
-    <ProfilPengguna />
+    // <ProfilPengguna />
     // <ProfilTrashpicker />
   );
 }
