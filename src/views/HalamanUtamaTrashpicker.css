@@ -3,3 +3,10 @@
   background-position: top right;
   background-repeat: no-repeat;
 }
+
+.button-status-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 65px;
+}

@@ -21,6 +21,7 @@ const Withdraw = () => {
         <h6 className="lead-six label-title" style={{ color: "white" }}>Nomor Telepon</h6>
         <InputForm name="nominal" />
       </div>
+      <button className="withdraw-btn lead-five">Cairkan</button>
     </div>
   )
 }

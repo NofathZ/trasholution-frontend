@@ -8,7 +8,7 @@ const SaldoInfo = () => {
         <h3 className="heading-three secondary-color">Rp. 43.234,00</h3>
       </div>
 
-      <div className="today-status">
+      {/* <div className="today-status">
         <div className="percentation-status">
           <div className="circle">
             <h1 className="heading-one secondary-color">0%</h1>
@@ -23,7 +23,7 @@ const SaldoInfo = () => {
           <h6 className="lead-eight secondary-color">Total Pencairan</h6>
           <h6 className="heading-six secondary-color">Rp. 20.000</h6>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
