@@ -18,10 +18,10 @@ function App() {
     // <HalamanRegister />
     // <HalamanPenjemputanSampah />
     // <HalamanVerifikasi />
-    // <HalamanUtama />
+    <HalamanUtama />
     // <DetailValidasiSampah />
     // <FormJualSampah />
-    <FormPencairanSaldo />
+    // <FormPencairanSaldo />
     // <HalamanUtamaTrashpicker />
     // <ProfilPengguna />
     // <ProfilTrashpicker />

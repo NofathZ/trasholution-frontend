@@ -17,6 +17,7 @@ const HalamanUtama = () => {
         <span className="heading-three main-color">Alfonsus!</span>
       </div>
       <MenuBox />
+      <button className="login-btn heading-six main-color">Login</button>
     </Layout>
   )
 }

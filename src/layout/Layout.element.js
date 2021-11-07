@@ -5,6 +5,7 @@ const LayoutWrapper = styled.div`
   min-height: 100vh;
   background-color: white;
   margin: 0 auto;
+  position: relative;
 `;
 
 const LayoutFixedWrapper = styled.div`
