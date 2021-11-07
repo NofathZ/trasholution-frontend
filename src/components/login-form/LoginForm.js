@@ -82,6 +82,10 @@ const LoginForm = () => {
       </div>
 
       <ButtonValid className="heading-five" style={{ marginTop: "20px" }}>Log In</ButtonValid>
+      <div className="register-redirect">
+        <span className="secondary-color lead-eight">Belum daftar? </span>
+        <span className="main-color heading-eight to-register">Daftar disini</span>
+      </div>
     </>
   );
 };

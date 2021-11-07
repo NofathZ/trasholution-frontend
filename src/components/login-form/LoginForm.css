@@ -50,3 +50,13 @@
   margin: 20px auto 0 auto;
   display: block;
 } */
+
+
+.register-redirect {
+  margin-top: 23px;
+  text-align: center;
+}
+
+.register-redirect .to-register {
+  cursor: pointer;
+}

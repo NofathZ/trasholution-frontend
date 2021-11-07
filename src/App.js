@@ -14,11 +14,11 @@ import './App.css'
 
 function App() {
   return (
-    // <HalamanLogin />
+    <HalamanLogin />
     // <HalamanRegister />
     // <HalamanPenjemputanSampah />
     // <HalamanVerifikasi />
-    <HalamanUtama />
+    // <HalamanUtama />
     // <DetailValidasiSampah />
     // <FormJualSampah />
     // <FormPencairanSaldo />
