@@ -10,6 +10,7 @@ import HalamanUtamaTrashpicker from './views/HalamanUtamaTrashpicker'
 import ProfilPengguna from './views/ProfilPengguna'
 import ProfilTrashpicker from './views/ProfilTrashpicker'
 import TerimaPermintaan from './views/TerimaPermintaan'
+import SampahPenggunaDiterima from './views/SampahPenggunaDiterima'
 import './assets/_variable.css';
 import './App.css'
 
@@ -26,7 +27,8 @@ function App() {
     // <HalamanUtamaTrashpicker />
     // <ProfilPengguna />
     // <ProfilTrashpicker />
-    <TerimaPermintaan />
+    // <TerimaPermintaan />
+    <SampahPenggunaDiterima />
   );
 }
 

@@ -1,5 +1,5 @@
 import DaftarSampahPermintaan from '../daftar-sampah-permintaan/DaftarSampahPermintaan'
-import Map from '../map/Map'
+import MapPengguna from '../map-pengguna/MapPengguna'
 import "./InfoPengguna.css"
 
 const InfoPengguna = () => {
@@ -10,7 +10,7 @@ const InfoPengguna = () => {
       <h6 className="lead-six secondary-color" style={{marginTop:"12px"}}>Alamat Pengguna</h6>
       <h4 className="heading-four secondary-color" style={{marginTop:"3px"}}>jl. masfistaosa no.59</h4>
       <h6 className="lead-six secondary-color" style={{marginTop:"15px", marginBottom:"10px"}}>Detail map</h6>
-      <Map />
+      <MapPengguna />
       <h6 className="lead-six secondary-color" style={{margin:"9px 0"}}>Detail Sampah</h6>
       <DaftarSampahPermintaan />
       <button className="terima-permintaan-btn heading-five">Terima Permintaan</button>
