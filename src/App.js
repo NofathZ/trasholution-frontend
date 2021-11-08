@@ -9,12 +9,13 @@ import FormPencairanSaldo from './views/FormPencairanSaldo'
 import HalamanUtamaTrashpicker from './views/HalamanUtamaTrashpicker'
 import ProfilPengguna from './views/ProfilPengguna'
 import ProfilTrashpicker from './views/ProfilTrashpicker'
+import TerimaPermintaan from './views/TerimaPermintaan'
 import './assets/_variable.css';
 import './App.css'
 
 function App() {
   return (
-    <HalamanLogin />
+    // <HalamanLogin />
     // <HalamanRegister />
     // <HalamanPenjemputanSampah />
     // <HalamanVerifikasi />
@@ -25,6 +26,7 @@ function App() {
     // <HalamanUtamaTrashpicker />
     // <ProfilPengguna />
     // <ProfilTrashpicker />
+    <TerimaPermintaan />
   );
 }
 

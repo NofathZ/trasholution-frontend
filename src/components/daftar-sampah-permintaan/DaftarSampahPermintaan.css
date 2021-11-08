@@ -1,0 +1,31 @@
+.daftar-permintaan-box {
+  width: 292px;
+  min-height: 164px; /* Sementara, kalau data udah ada nanti dihapus */
+  border-radius: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.daftar-row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+.column-daftar-sampah {
+  flex: 1;
+  color: white;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.line-break-daftar-sampah {
+  width: 100%;
+  border-bottom: 1px solid white;
+}
