@@ -1,12 +1,53 @@
+import { useState } from "react";
 import InputForm from "../input-form/InputForm";
 import { InputRadio } from "../input-form/InputRadio";
 import { ButtonValid } from "../button/ButtonValid";
+import API from "../../api/api.js"
 import "./LoginForm.css";
 
 const LoginForm = () => {
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [loginAs, setLoginAs] = useState("")
+
+  const handleInput = async (e) => {
+    e.preventDefault();
+    try {
+      const postData = {
+        email,
+        password
+      }
+
+      if (loginAs == "pengguna") {
+        const { data } = await API.post('/api/p/login', postData, {
+          headers: {
+            'Content-Type': "application/json"
+          }
+        })
+        if (data.data) {
+          localStorage.setItem("token", data.data.access_token);
+        }
+      }
+      else if (loginAs == "trashpicker") {
+        const { data } = await API.post('/api/t/login', postData, {
+          headers: {
+            'Content-Type': "application/json"
+          }
+        })
+        if (data.data) {
+          localStorage.setItem("token", data.data.access_token);
+        }
+      }
+    }
+    catch (err) {
+      console.error(err)
+    }
+  }
+
   return (
-    <>
-      <InputForm placeholder="Email">
+    <form onSubmit={handleInput}>
+      <InputForm placeholder="Email" type="email" required={true} onChange={val => setEmail(val)}>
         <svg
           width="24"
           height="24"
@@ -23,7 +64,7 @@ const LoginForm = () => {
           />
         </svg>
       </InputForm>
-      <InputForm placeholder="Password">
+      <InputForm placeholder="Password" type="password" required={true} onChange={val => setPassword(val)}>
         <svg
           width="24"
           height="24"
@@ -48,7 +89,7 @@ const LoginForm = () => {
         Login Sebagai
       </h5>
 
-      <div className="input-radio-wrapper">
+      <div className="input-radio-wrapper" onChange={event => setLoginAs(event.target.value)}>
         <InputRadio>
           <input
             className="input-radio"
@@ -56,6 +97,7 @@ const LoginForm = () => {
             id="pengguna"
             name="login-as"
             value="pengguna"
+            required
           />
           <label
             className="lead-five label-radio secondary-color"
@@ -71,6 +113,7 @@ const LoginForm = () => {
             id="trashpicker"
             name="login-as"
             value="trashpicker"
+            required
           />
           <label
             className="lead-five label-radio secondary-color"
@@ -86,7 +129,7 @@ const LoginForm = () => {
         <span className="secondary-color lead-eight">Belum daftar? </span>
         <span className="main-color heading-eight to-register">Daftar disini</span>
       </div>
-    </>
+    </form>
   );
 };
 
