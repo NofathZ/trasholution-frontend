@@ -1,9 +1,42 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import Layout from '../layout/Layout';
 import HeadingTitle from '../components/heading-title/HeadingTitle';
 import BoxDaftarSampah from '../components/box-daftar-sampah/BoxDaftarSampah';
+import API from '../api/api'
 
 const HalamanDaftarSampah = () => {
+
+  const [daftarSampah, setDaftarSampah] = useState([])
+  const [dataTemp, setDataTemp] = useState([])
+
+  useEffect(async () => {
+    const { data } = await API.get('/api/daftar-sampah')
+    setDataTemp(data.data)
+    // const plastik = await data.data.filter(el => {
+    //   return
+    // })
+    // console.log(dataTemp)
+
+    const plastik = await dataTemp.filter((el) => {
+      return el.jenis.toLowerCase() == "plastik"
+    })
+
+    console.log(plastik)
+
+
+    // const kertas = dataTemp.filter((el) => {
+    //   return el.jenis.toLowerCase() == "kertas"
+    // })
+    // // setDaftarSampah(plastik, kertas)
+
+    // let isiData = []
+    // isiData.push(plastik)
+    // isiData.push(kertas)
+    // daftarSampah.push(plastik)
+    // daftarSampah.push(kertas)
+    // setDaftarSampah(isiData)
+  }, [])
+
   return (
     <>
       <Layout>
@@ -13,7 +46,7 @@ const HalamanDaftarSampah = () => {
           </svg>
           <h3 className="heading-three main-color">Daftar Sampah</h3>
         </HeadingTitle>
-        <BoxDaftarSampah />
+        <BoxDaftarSampah dataSampah={daftarSampah} />
       </Layout>
     </>
   )

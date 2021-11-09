@@ -1,22 +1,22 @@
+import { useEffect } from "react/cjs/react.development"
 import "./BoxDaftarSampah.css"
 import JenisSampah from "./JenisSampah"
 
-const BoxDaftarSampah = () => {
+const BoxDaftarSampah = (props) => {
+  useEffect(() => {
+    // console.log(props.dataSampah)
+    // console.log("Box daftar")
+  }, [props.dataSampah])
   return (
     <div className="box-daftar-sampah main-color-bg">
       <div className="jenis-sampah">
-        <h5 className="jenis-sampah-title heading-five">Jenis Sampah</h5>
-        <div className="list-sampah">
-          <span className="baris-data lead-eight">No</span>
-          <span className="baris-data lead-eight">Nama</span>
-          <span className="baris-data lead-eight">Ukuran</span>
-          <span className="baris-data lead-eight">Harga</span>
-        </div>
-        <JenisSampah />
-        <JenisSampah /> 
+
+        <JenisSampah dataSampah={props.dataSampah} />
+
+        
       </div>
 
-      
+
     </div>
   )
 }
