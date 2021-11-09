@@ -5,48 +5,42 @@ import BoxDaftarSampah from '../components/box-daftar-sampah/BoxDaftarSampah';
 import API from '../api/api'
 
 const HalamanDaftarSampah = () => {
-
-  const [daftarSampah, setDaftarSampah] = useState([])
-  const [dataTemp, setDataTemp] = useState([])
+  const [daftarSampah, setDaftarSampah] = useState([]);
 
   useEffect(async () => {
-    const { data } = await API.get('/api/daftar-sampah')
-    setDataTemp(data.data)
-    // const plastik = await data.data.filter(el => {
-    //   return
-    // })
-    // console.log(dataTemp)
+    const { data } = await API.get("/api/daftar-sampah");
 
-    const plastik = await dataTemp.filter((el) => {
-      return el.jenis.toLowerCase() == "plastik"
-    })
+    const jenis = [];
 
-    console.log(plastik)
+    const structured = [];
 
+    data.data.forEach((sampah) => {
+      if (!jenis.includes(sampah.jenis)) {
+        jenis.push(sampah.jenis);
+      }
+    });
 
-    // const kertas = dataTemp.filter((el) => {
-    //   return el.jenis.toLowerCase() == "kertas"
-    // })
-    // // setDaftarSampah(plastik, kertas)
+    jenis.forEach((j) => {
+      const sampahDenganJenisIni = data.data.filter((sampah) => {
+        return sampah.jenis === j;
+      });
+      structured.push({ jenis: j, daftarSampah: sampahDenganJenisIni });
+    });
 
-    // let isiData = []
-    // isiData.push(plastik)
-    // isiData.push(kertas)
-    // daftarSampah.push(plastik)
-    // daftarSampah.push(kertas)
-    // setDaftarSampah(isiData)
-  }, [])
+    setDaftarSampah(structured);
+    console.log(structured)
+  }, []);
 
   return (
     <>
       <Layout>
         <HeadingTitle>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 19L8 12L15 5" stroke="#35BE80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M15 19L8 12L15 5" stroke="#35BE80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <h3 className="heading-three main-color">Daftar Sampah</h3>
         </HeadingTitle>
-        <BoxDaftarSampah dataSampah={daftarSampah} />
+        <BoxDaftarSampah daftarSampah={daftarSampah} />
       </Layout>
     </>
   )

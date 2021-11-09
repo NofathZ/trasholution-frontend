@@ -1,5 +1,6 @@
 import './FormInputSampah.css'
 import { ButtonValid } from '../button/ButtonValid'
+import { Link } from 'react-router-dom'
 
 const FormInputSampah = () => {
   return (
@@ -43,7 +44,9 @@ const FormInputSampah = () => {
           </svg>
         </button>
       </div>
-      <ButtonValid className="lead-five" style={{ marginTop: "28px" }}>Jual</ButtonValid>
+      <Link to={'/permintaan-diterima'} style={{ textDecoration: "none" }}>
+        <ButtonValid className="lead-five" style={{ marginTop: "28px" }}>Jual</ButtonValid>
+      </Link>
     </>
   )
 }

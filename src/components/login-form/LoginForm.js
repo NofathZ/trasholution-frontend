@@ -3,6 +3,7 @@ import InputForm from "../input-form/InputForm";
 import { InputRadio } from "../input-form/InputRadio";
 import { ButtonValid } from "../button/ButtonValid";
 import API from "../../api/api.js"
+import { Link, Redirect } from "react-router-dom";
 import "./LoginForm.css";
 
 const LoginForm = () => {
@@ -10,6 +11,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loginAs, setLoginAs] = useState("")
+  const [inputAllData, setInputAllData] = useState(false)
 
   const handleInput = async (e) => {
     e.preventDefault();
@@ -39,6 +41,9 @@ const LoginForm = () => {
           localStorage.setItem("token", data.data.access_token);
         }
       }
+
+      setInputAllData(true)
+      console.log("masuk")
     }
     catch (err) {
       console.error(err)
@@ -58,9 +63,9 @@ const LoginForm = () => {
           <path
             d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z"
             stroke="#50CB93"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </InputForm>
@@ -127,8 +132,11 @@ const LoginForm = () => {
       <ButtonValid className="heading-five" style={{ marginTop: "20px" }}>Log In</ButtonValid>
       <div className="register-redirect">
         <span className="secondary-color lead-eight">Belum daftar? </span>
-        <span className="main-color heading-eight to-register">Daftar disini</span>
+        <Link to={"/register"} style={{ textDecoration: "none" }}>
+          <span className="main-color heading-eight to-register">Daftar disini</span>
+        </Link>
       </div>
+      {inputAllData ? <Redirect to={'/'}></Redirect> : ""}
     </form>
   );
 };

@@ -3,6 +3,7 @@ import Layout from '../layout/Layout';
 import ThLogo from '../assets/th-logo.png'
 import HeadingTitle from '../components/heading-title/HeadingTitle';
 import MenuBox from '../components/menu-box/MenuBox';
+import { Link } from 'react-router-dom';
 import "./HalamanUtama.css"
 
 const HalamanUtama = () => {
@@ -17,7 +18,7 @@ const HalamanUtama = () => {
         <span className="heading-three main-color">Alfonsus!</span>
       </div>
       <MenuBox />
-      <button className="login-btn heading-six main-color">Login</button>
+      <Link className="login-btn heading-six main-color" style={{ textDecoration: "none" }} to={'/login'}>Login</Link>
     </Layout>
   )
 }

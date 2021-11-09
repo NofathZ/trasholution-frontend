@@ -3,6 +3,7 @@ import InputForm from "../input-form/InputForm"
 import { InputRadio } from "../input-form/InputRadio"
 import { ButtonValid } from "../button/ButtonValid"
 import API from "../../api/api.js"
+import { Redirect } from "react-router"
 
 const RegisterForm = () => {
 
@@ -11,6 +12,7 @@ const RegisterForm = () => {
   const [password, setPassword] = useState("")
   const [phone, setPhone] = useState(0)
   const [regisAs, setRegisAs] = useState("")
+  const [statusRedirect, setStatusRedirect] = useState(false)
 
 
   const handleInput = async (e) => {
@@ -36,6 +38,8 @@ const RegisterForm = () => {
           }
         })
       }
+
+      setStatusRedirect(true)
     }
     catch(err) {
       console.error(err)
@@ -89,6 +93,7 @@ const RegisterForm = () => {
         </div>
 
         <ButtonValid className="heading-five" style={{ marginTop: "20px" }}>Register</ButtonValid>
+        {statusRedirect ? <Redirect to={'/verifikasi'} /> : ""}
       </form>
     </>
   )

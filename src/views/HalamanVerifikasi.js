@@ -9,7 +9,7 @@ const HalamanVerifikasi = () => {
     <Layout>
       <HeadingTitle>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 19L8 12L15 5" stroke="#35BE80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M15 19L8 12L15 5" stroke="#35BE80" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <div></div>
       </HeadingTitle>
@@ -24,12 +24,7 @@ const HalamanVerifikasi = () => {
         <p className="lead-five" style={{ textAlign: "center" }}>Masukan OTP yang telah dikirim ke nomor telepon anda</p>
       </div>
       <InputVerif />
-      <div className="lead-five" style={{ textAlign: "center", marginTop: "78px" }}>
-        <span className="secondary-color">Tidak menerima OTP? </span>
-        <span style={{ color: "#35BE80" }}>Resend</span>
-      </div>
-
-      <ButtonValid className="heading-five" style={{ marginTop: "20px" }}>Kirim</ButtonValid>
+      
     </Layout>
   )
 }

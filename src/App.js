@@ -25,7 +25,6 @@ import {
 function App() {
   return (
     <Router>
-
       <UserContext.Provider>
         <Switch>
           <Route path="/login">
@@ -37,13 +36,13 @@ function App() {
           <Route path="/trashpicker/jemput-sampah">
             <HalamanPenjemputanSampah />
           </Route>
-          <Route path="/verification">
+          <Route path="/verifikasi">
             <HalamanVerifikasi />
           </Route>
           <Route path="/" exact>
             <HalamanUtama />
           </Route>
-          <Route path="/detail-validasi">
+          <Route path="/trashpicker/detail-validasi">
             <DetailValidasiSampah />
           </Route>
           <Route path="/jual-sampah">
@@ -52,16 +51,16 @@ function App() {
           <Route path="/saldo">
             <FormPencairanSaldo />
           </Route>
-          <Route path="/trashpicker">
+          <Route path="/trashpicker" exact>
             <HalamanUtamaTrashpicker />
           </Route>
-          <Route path="/username">
+          <Route path="/profil-pengguna">
             <ProfilPengguna />
           </Route>
-          <Route path="/trashpickername">
+          <Route path="/trashpicker/profil-trashpicker">
             <ProfilTrashpicker />
           </Route>
-          <Route path="/terima-permintaan">
+          <Route path="/trashpicker/terima-permintaan">
             <TerimaPermintaan />
           </Route>
           <Route path="/permintaan-diterima">
