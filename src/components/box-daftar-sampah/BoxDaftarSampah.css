@@ -1,0 +1,27 @@
+.box-daftar-sampah {
+  width: 316px;
+  border-radius: 29px;
+  margin: 0 auto;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.jenis-sampah {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.jenis-sampah-title {
+  padding: 0 20px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.list-sampah {
+  display: flex;
+  padding: 0 20px;
+}
+
+.baris-data {
+  flex: 1;
+}
