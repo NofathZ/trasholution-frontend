@@ -12,7 +12,7 @@ const Question = (props) => {
   return (
     <div className="row-box-input">
       <span className="lead-seven list-item-input">
-        <select id={`id-sampah${props.idx}`} className="jenis-sampah input-sampah-column" onChange={output} required>
+        <select id={`id-sampah${props.idx}`} className="jenis-sampah-dropdown input-sampah-column" onChange={output} required>
           {props.namaSampah.map(sampah => {
             return (
               <option value={sampah.id} key={sampah.id}>{sampah.nama}</option>
