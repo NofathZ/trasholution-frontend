@@ -5,6 +5,8 @@ import { ButtonValid } from "../button/ButtonValid";
 import API from "../../api/api.js"
 import { Link, Redirect } from "react-router-dom";
 import "./LoginForm.css";
+import { render } from "@testing-library/react";
+import { useEffect } from "react/cjs/react.development";
 
 const LoginForm = () => {
 
@@ -13,9 +15,8 @@ const LoginForm = () => {
   const [loginAs, setLoginAs] = useState("")
   const [inputAllData, setInputAllData] = useState(false)
 
-  const setRole =  async (token) => {
-    // const token = localStorage.getItem('token')
-    const dataPengguna = await API.get('/api/p/profile', {
+  const setRole = async (token) => {
+    const dataPengguna = await API.get(`${loginAs == "pengguna" ? "/api/p/profile" : "/api/t/profile"}`, {
       headers: {
         Accept: "application/json",
         Authorization: `Bearer ${token}`
@@ -28,7 +29,6 @@ const LoginForm = () => {
   const handleInput = async (e) => {
     e.preventDefault();
 
-    console.log(loginAs)
     try {
       const postData = {
         email,
@@ -42,9 +42,9 @@ const LoginForm = () => {
           }
         })
         if (data) {
-          localStorage.setItem("token", data.token);
-          localStorage.setItem('activeStatus', "false") // semenstara
-          setRole(data.token)
+          await localStorage.setItem("token", data.token);
+          await localStorage.setItem('activeStatus', "false") // semenstara
+          await setRole(data.token)
         }
       }
       else if (loginAs == "trashpicker") {
@@ -54,9 +54,9 @@ const LoginForm = () => {
           }
         })
         if (data) {
-          localStorage.setItem("token", data.token);
-          localStorage.setItem('activeStatus', "false")
-          setRole(data.token)
+          await localStorage.setItem("token", data.token);
+          await localStorage.setItem('activeStatus', "false")
+          await setRole(data.token)
         }
       }
 
@@ -65,6 +65,7 @@ const LoginForm = () => {
       }
 
       setInputAllData(true)
+      window.location.reload()
     }
     catch (err) {
       console.error(err)
@@ -157,7 +158,6 @@ const LoginForm = () => {
           <span className="main-color heading-eight to-register">Daftar disini</span>
         </Link>
       </div>
-      {inputAllData ? <Redirect to={'/'}></Redirect> : ""}
     </form>
   );
 };

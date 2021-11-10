@@ -7,7 +7,7 @@ const MenuBoxTrashpicker = (props) => {
     if (localStorage.getItem('token')) {
       localStorage.removeItem('token')
       localStorage.removeItem('role')
-      window.location.reload()
+      window.location.reload('/')
     }
   }
   

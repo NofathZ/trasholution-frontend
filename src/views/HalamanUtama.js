@@ -9,6 +9,9 @@ import "./HalamanUtama.css"
 
 const HalamanUtama = () => {
 
+  useEffect(() => {
+  },[])
+
   return (
     <Layout className="bg-halaman-utama">
       <HeadingTitle>

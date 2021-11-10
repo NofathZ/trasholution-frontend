@@ -13,7 +13,9 @@ import TerimaPermintaan from './views/TerimaPermintaan'
 import SampahPenggunaDiterima from './views/SampahPenggunaDiterima'
 import HalamanDaftarSampah from './views/HalamanDaftarSampah'
 import { UserContext } from './context/UserContext'
-import ProtectedRoute from './components/protected-route/ProtectedRoute'
+import ProtectedRouteDefault from './components/protected-route/ProtectedRouteDefault'
+import ProtectedRoutePengguna from './components/protected-route/ProtectedRoutePengguna'
+import ProtectedRouteTrashpicker from './components/protected-route/ProtectedRouteTrashpicker'
 import AuthProtectedRoute from './components/protected-route/AuthProtectedRoute'
 import './assets/_variable.css';
 import './App.css'
@@ -44,41 +46,41 @@ function App() {
           </AuthProtectedRoute>
 
           {/* Halaman Pengguna */}
-          <Route path="/" exact>
+          <ProtectedRouteDefault path="/" exact>
             <HalamanUtama />
-          </Route>
-          <ProtectedRoute path="/jual-sampah">
+          </ProtectedRouteDefault>
+          <ProtectedRoutePengguna path="/jual-sampah">
             <FormJualSampah />
-          </ProtectedRoute>
-          <ProtectedRoute path="/saldo">
+          </ProtectedRoutePengguna>
+          <ProtectedRoutePengguna path="/saldo">
             <FormPencairanSaldo />
-          </ProtectedRoute>
-          <ProtectedRoute path="/profil-pengguna">
+          </ProtectedRoutePengguna>
+          <ProtectedRoutePengguna path="/profil-pengguna">
             <ProfilPengguna />
-          </ProtectedRoute>
-          <ProtectedRoute path="/permintaan-diterima">
+          </ProtectedRoutePengguna>
+          <ProtectedRoutePengguna path="/permintaan-diterima">
             <SampahPenggunaDiterima />
-          </ProtectedRoute>
-          <Route path="/daftar-sampah">
+          </ProtectedRoutePengguna>
+          <ProtectedRouteDefault path="/daftar-sampah">
             <HalamanDaftarSampah />
-          </Route>
+          </ProtectedRouteDefault>
 
           {/* Halaman Trashpicker */}
-          <Route path="/trashpicker" exact>
+          <ProtectedRouteTrashpicker path="/trashpicker" exact>
             <HalamanUtamaTrashpicker />
-          </Route>
-          <Route path="/trashpicker/jemput-sampah">
+          </ProtectedRouteTrashpicker>
+          <ProtectedRouteTrashpicker path="/trashpicker/jemput-sampah">
             <HalamanPenjemputanSampah />
-          </Route>
-          <Route path="/trashpicker/detail-validasi">
+          </ProtectedRouteTrashpicker>
+          <ProtectedRouteTrashpicker path="/trashpicker/detail-validasi">
             <DetailValidasiSampah />
-          </Route>
-          <Route path="/trashpicker/profil-trashpicker">
+          </ProtectedRouteTrashpicker>
+          <ProtectedRouteTrashpicker path="/trashpicker/profil-trashpicker">
             <ProfilTrashpicker />
-          </Route>
-          <Route path="/trashpicker/terima-permintaan">
+          </ProtectedRouteTrashpicker>
+          <ProtectedRouteTrashpicker path="/trashpicker/terima-permintaan">
             <TerimaPermintaan />
-          </Route>
+          </ProtectedRouteTrashpicker>
         </Switch>
       </div>
     </Router>

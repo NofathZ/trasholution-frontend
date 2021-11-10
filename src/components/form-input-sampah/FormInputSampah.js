@@ -41,7 +41,6 @@ const FormInputSampah = () => {
 
   const showOutput = (e) => {
     e.preventDefault()
-    console.log(outputList)
   }
 
   return (

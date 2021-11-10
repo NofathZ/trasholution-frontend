@@ -5,16 +5,19 @@ import ThLogo from '../assets/th-logo.png'
 import MenuBoxTrashpicker from '../components/menu-box-trashpicker/MenuBoxTrashpicker';
 import ButtonSwitch from '../components/button/ButtonSwitch';
 import "./HalamanUtamaTrashpicker.css"
+import API from '../api/api'
 
 const HalamanUtamaTrashpicker = () => {
+
   const [status, setStatus] = useState(
     localStorage.getItem('activeStatus') == "false" ? false : true
   )
 
+  const token = localStorage.getItem('token')
+
   useEffect(() => {
     localStorage.setItem('activeStatus', status)
-    console.log(localStorage.getItem('activeStatus'))
-  }, [status])
+  }, [])
 
   return (
     <Layout className="bg-halaman-utama-trashpicker">
