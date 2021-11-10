@@ -28,7 +28,6 @@ const HalamanDaftarSampah = () => {
     });
 
     setDaftarSampah(structured);
-    console.log(structured)
   }, []);
 
   return (

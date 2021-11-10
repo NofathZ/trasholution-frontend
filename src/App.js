@@ -13,6 +13,8 @@ import TerimaPermintaan from './views/TerimaPermintaan'
 import SampahPenggunaDiterima from './views/SampahPenggunaDiterima'
 import HalamanDaftarSampah from './views/HalamanDaftarSampah'
 import { UserContext } from './context/UserContext'
+import ProtectedRoute from './components/protected-route/ProtectedRoute'
+import AuthProtectedRoute from './components/protected-route/AuthProtectedRoute'
 import './assets/_variable.css';
 import './App.css'
 
@@ -27,47 +29,53 @@ function App() {
     <Router>
       <UserContext.Provider>
         <Switch>
-          <Route path="/login">
+
+          {/* Auth */}
+          <AuthProtectedRoute path="/login">
             <HalamanLogin />
-          </Route>
-          <Route path="/register">
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path="/register">
             <HalamanRegister />
+          </AuthProtectedRoute>
+          <AuthProtectedRoute path="/verifikasi">
+            <HalamanVerifikasi />
+          </AuthProtectedRoute>
+
+          {/* Halaman Pengguna */}
+          <Route path="/" exact>
+            <HalamanUtama />
+          </Route>
+          <ProtectedRoute path="/jual-sampah">
+            <FormJualSampah />
+          </ProtectedRoute>
+          <ProtectedRoute path="/saldo">
+            <FormPencairanSaldo />
+          </ProtectedRoute>
+          <ProtectedRoute path="/profil-pengguna">
+            <ProfilPengguna />
+          </ProtectedRoute>
+          <ProtectedRoute path="/permintaan-diterima">
+            <SampahPenggunaDiterima />
+          </ProtectedRoute>
+          <Route path="/daftar-sampah">
+            <HalamanDaftarSampah />
+          </Route>
+
+          {/* Halaman Trashpicker */}
+          <Route path="/trashpicker" exact>
+            <HalamanUtamaTrashpicker />
           </Route>
           <Route path="/trashpicker/jemput-sampah">
             <HalamanPenjemputanSampah />
           </Route>
-          <Route path="/verifikasi">
-            <HalamanVerifikasi />
-          </Route>
-          <Route path="/" exact>
-            <HalamanUtama />
-          </Route>
           <Route path="/trashpicker/detail-validasi">
             <DetailValidasiSampah />
-          </Route>
-          <Route path="/jual-sampah">
-            <FormJualSampah />
-          </Route>
-          <Route path="/saldo">
-            <FormPencairanSaldo />
-          </Route>
-          <Route path="/trashpicker" exact>
-            <HalamanUtamaTrashpicker />
-          </Route>
-          <Route path="/profil-pengguna">
-            <ProfilPengguna />
           </Route>
           <Route path="/trashpicker/profil-trashpicker">
             <ProfilTrashpicker />
           </Route>
           <Route path="/trashpicker/terima-permintaan">
             <TerimaPermintaan />
-          </Route>
-          <Route path="/permintaan-diterima">
-            <SampahPenggunaDiterima />
-          </Route>
-          <Route path="/daftar-sampah">
-            <HalamanDaftarSampah />
           </Route>
         </Switch>
       </UserContext.Provider>

@@ -27,8 +27,8 @@ const LoginForm = () => {
             'Content-Type': "application/json"
           }
         })
-        if (data.data) {
-          localStorage.setItem("token", data.data.access_token);
+        if (data) {
+          localStorage.setItem("token", data.token);
         }
       }
       else if (loginAs == "trashpicker") {
@@ -37,13 +37,16 @@ const LoginForm = () => {
             'Content-Type': "application/json"
           }
         })
-        if (data.data) {
-          localStorage.setItem("token", data.data.access_token);
+        if (data) {
+          localStorage.setItem("token", data.token);
         }
       }
 
+      else {
+        throw Error
+      }
+
       setInputAllData(true)
-      console.log("masuk")
     }
     catch (err) {
       console.error(err)

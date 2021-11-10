@@ -26,6 +26,9 @@ p {
 .secondary-color {
   color: #969696;
 }
+.secondary-color-bg {
+  background-color: #969696;
+}
 
 /* Heading */
 .heading-one {

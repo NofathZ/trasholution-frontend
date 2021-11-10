@@ -25,7 +25,7 @@ const HalamanUtamaTrashpicker = () => {
           {status ? "Online" : "Offline"}
         </span>
       </div>
-      <MenuBoxTrashpicker />
+      <MenuBoxTrashpicker status={status} />
       <div className="button-status-box">
         <ButtonSwitch status={status} changeStatus={(status) => setStatus(!status)} />
       </div>
