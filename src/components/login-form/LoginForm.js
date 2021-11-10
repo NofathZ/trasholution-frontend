@@ -13,8 +13,22 @@ const LoginForm = () => {
   const [loginAs, setLoginAs] = useState("")
   const [inputAllData, setInputAllData] = useState(false)
 
+  const setRole =  async (token) => {
+    // const token = localStorage.getItem('token')
+    const dataPengguna = await API.get('/api/p/profile', {
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    })
+
+    localStorage.setItem('role', dataPengguna.data.role)
+  }
+
   const handleInput = async (e) => {
     e.preventDefault();
+
+    console.log(loginAs)
     try {
       const postData = {
         email,
@@ -29,6 +43,8 @@ const LoginForm = () => {
         })
         if (data) {
           localStorage.setItem("token", data.token);
+          localStorage.setItem('activeStatus', "false") // semenstara
+          setRole(data.token)
         }
       }
       else if (loginAs == "trashpicker") {
@@ -39,6 +55,8 @@ const LoginForm = () => {
         })
         if (data) {
           localStorage.setItem("token", data.token);
+          localStorage.setItem('activeStatus', "false")
+          setRole(data.token)
         }
       }
 

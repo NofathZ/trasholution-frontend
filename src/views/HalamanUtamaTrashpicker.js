@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '../layout/Layout';
 import HeadingTitle from '../components/heading-title/HeadingTitle';
 import ThLogo from '../assets/th-logo.png'
@@ -7,7 +7,14 @@ import ButtonSwitch from '../components/button/ButtonSwitch';
 import "./HalamanUtamaTrashpicker.css"
 
 const HalamanUtamaTrashpicker = () => {
-  const [status, setStatus] = useState(false)
+  const [status, setStatus] = useState(
+    localStorage.getItem('activeStatus') == "false" ? false : true
+  )
+
+  useEffect(() => {
+    localStorage.setItem('activeStatus', status)
+    console.log(localStorage.getItem('activeStatus'))
+  }, [status])
 
   return (
     <Layout className="bg-halaman-utama-trashpicker">

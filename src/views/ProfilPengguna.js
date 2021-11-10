@@ -1,9 +1,26 @@
 import "./ProfilPengguna.css"
+import { useContext, useEffect, useState } from "react"
 import LayoutFixed from '../layout/LayoutFixed'
 import HeadingTitle from "../components/heading-title/HeadingTitle"
 import ContentProfilPengguna from "../components/content-profil-pengguna/ContentProfilPengguna"
+import API from "../api/api"
 
 const ProfilPengguna = () => {
+
+  const [dataPengguna, setDataPengguna] = useState([])
+
+  useEffect(async () => {
+    const token = localStorage.getItem('token')
+    const dataPengguna = await API.get('/api/p/profile', {
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`
+      }
+    })
+
+    setDataPengguna(dataPengguna.data.data)
+  }, [])
+
   return (
     <LayoutFixed className="outer-padding-profil-pengguna">
       <div className="container-profil-pengguna">
@@ -14,8 +31,8 @@ const ProfilPengguna = () => {
           <div></div>
         </HeadingTitle>
         <img className="img-user" />
-        <h3 className="heading-three" style={{ color: "white", textAlign: "center" }}>alfonsus marlina</h3>
-        <ContentProfilPengguna />
+        <h3 className="heading-three" style={{ color: "white", textAlign: "center" }}>{dataPengguna.nama}</h3>
+        <ContentProfilPengguna dataPengguna={dataPengguna} />
       </div>
     </LayoutFixed>
   )

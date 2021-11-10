@@ -17,17 +17,19 @@ import ProtectedRoute from './components/protected-route/ProtectedRoute'
 import AuthProtectedRoute from './components/protected-route/AuthProtectedRoute'
 import './assets/_variable.css';
 import './App.css'
-
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+import { useState } from 'react'
 
 function App() {
+
+
   return (
     <Router>
-      <UserContext.Provider>
+      <div>
         <Switch>
 
           {/* Auth */}
@@ -78,7 +80,7 @@ function App() {
             <TerimaPermintaan />
           </Route>
         </Switch>
-      </UserContext.Provider>
+      </div>
     </Router>
   );
 }

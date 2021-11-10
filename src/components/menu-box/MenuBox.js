@@ -9,6 +9,7 @@ const MenuBox = () => {
   const logout = () => {
     if (localStorage.getItem('token')) {
       localStorage.removeItem('token')
+      localStorage.removeItem('role')
       window.location.reload()
     }
   }

@@ -4,9 +4,11 @@ import ThLogo from '../assets/th-logo.png'
 import HeadingTitle from '../components/heading-title/HeadingTitle';
 import MenuBox from '../components/menu-box/MenuBox';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import "./HalamanUtama.css"
 
 const HalamanUtama = () => {
+
   return (
     <Layout className="bg-halaman-utama">
       <HeadingTitle>
@@ -18,7 +20,9 @@ const HalamanUtama = () => {
         <span className="heading-three main-color">Alfonsus!</span>
       </div>
       <MenuBox />
-      <Link className="login-btn heading-six main-color" style={{ textDecoration: "none" }} to={'/login'}>Login</Link>
+      {localStorage.getItem("token") ? "" :
+        <Link className="login-btn heading-six main-color" style={{ textDecoration: "none" }} to={'/login'}>Login</Link>
+      }
     </Layout>
   )
 }
