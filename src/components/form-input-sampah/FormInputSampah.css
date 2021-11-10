@@ -39,3 +39,16 @@
   background-color: #71EFA3;
   margin: 22px auto 0 auto;
 }
+
+.jenis-sampah {
+  padding: 0;
+  margin: 0;
+  width: 79px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.jenis-sampah option {
+  background-color: #35BE80;
+}
