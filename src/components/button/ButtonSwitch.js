@@ -2,13 +2,14 @@ import './ButtonSwitch.css'
 
 const ButtonSwitch = (props) => {
 
-  function changeStatus(status) {
-    props.changeStatus(status)
+  function changeStatus() {
+    props.changeStatus()
+    // console.log('status changed')
   }
 
   return (
     <label className="switch">
-      <input type="checkbox" checked={props.status} onClick={() => changeStatus(props.status)} />
+      <input type="checkbox" checked={props.status} onClick={() => changeStatus()} />
       <span className="slider round text-status-active lead-five">
         {props.status ? 'Online' : 'Offline'}
       </span>

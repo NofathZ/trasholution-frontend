@@ -9,15 +9,39 @@ import API from '../api/api'
 
 const HalamanUtamaTrashpicker = () => {
 
-  const [status, setStatus] = useState(
-    localStorage.getItem('activeStatus') == "false" ? false : true
-  )
+  const [status, setStatus] = useState(false)
 
   const token = localStorage.getItem('token')
 
-  useEffect(() => {
-    localStorage.setItem('activeStatus', status)
+  useEffect(async () => {
+
+    const profile = await API.get('/api/t/profile', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+
+    setStatus(profile.data.data.availability)
   }, [])
+
+  const changeStatus = async () => {
+    if (status) {
+      await API.get('/api/t/update-status/offline', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      setStatus(false)
+    }
+    else {
+      await API.get('/api/t/update-status/online', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      setStatus(true)
+    }
+  }
 
   return (
     <Layout className="bg-halaman-utama-trashpicker">
@@ -37,7 +61,7 @@ const HalamanUtamaTrashpicker = () => {
       </div>
       <MenuBoxTrashpicker status={status} />
       <div className="button-status-box">
-        <ButtonSwitch status={status} changeStatus={(status) => setStatus(!status)} />
+        <ButtonSwitch status={status} changeStatus={() => changeStatus()} />
       </div>
     </Layout>
   )

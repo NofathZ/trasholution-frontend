@@ -21,7 +21,7 @@ const MenuBoxTrashpicker = (props) => {
         </Link>
       </ButtonMenu>
       <ButtonMenu colorStatus={props.status ? "main-color-bg" : "secondary-color-bg"} title="Validasi Sampah">
-        <Link style={{ textDecoration: "none" }} to={'/trashpicker/detail-validasi'}>
+        <Link style={{ textDecoration: "none" }} to={props.status ? '/trashpicker/detail-validasi' : ''}>
           <svg width="39" height="41" viewBox="0 0 39 41" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.04995 0.350006C1.75208 0.350006 0.699951 1.40214 0.699951 2.70001C0.699951 3.99787 1.75208 5.05001 3.04995 5.05001H5.91513L6.63319 7.92228C6.64073 7.95549 6.64897 7.98843 6.6579 8.02109L9.84739 20.7791L7.74984 22.8766C4.78901 25.8374 6.88598 30.9 11.0732 30.9H31.2498C32.5477 30.9 33.5998 29.8479 33.5998 28.55C33.5998 27.2521 32.5477 26.2 31.2498 26.2L11.0732 26.2L13.4232 23.85H28.9C29.7901 23.85 30.6038 23.3471 31.0019 22.551L38.0519 8.45096C38.4161 7.72249 38.3772 6.85736 37.949 6.16454C37.5208 5.47172 36.7644 5.05001 35.95 5.05001H10.7598L10.0298 2.13005C9.76825 1.0839 8.82829 0.350006 7.74995 0.350006H3.04995Z" fill="white" />
             <path d="M33.6 36.775C33.6 38.7218 32.0218 40.3 30.075 40.3C28.1281 40.3 26.55 38.7218 26.55 36.775C26.55 34.8282 28.1281 33.25 30.075 33.25C32.0218 33.25 33.6 34.8282 33.6 36.775Z" fill="white" />
@@ -30,7 +30,7 @@ const MenuBoxTrashpicker = (props) => {
         </Link>
       </ButtonMenu>
       <ButtonMenu colorStatus={props.status ? "main-color-bg" : "secondary-color-bg"} title="Permintaan Penjemputan">
-        <Link style={{ textDecoration: "none" }} to={'/trashpicker/jemput-sampah'}>
+        <Link style={{ textDecoration: "none" }} to={props.status ? '/trashpicker/jemput-sampah' : ''}>
           <svg width="53" height="46" viewBox="0 0 53 46" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 40.625C20 43.3174 17.8174 45.5 15.125 45.5C12.4326 45.5 10.25 43.3174 10.25 40.625C10.25 37.9326 12.4326 35.75 15.125 35.75C17.8174 35.75 20 37.9326 20 40.625Z" fill="white" />
             <path d="M42.75 40.625C42.75 43.3174 40.5674 45.5 37.875 45.5C35.1826 45.5 33 43.3174 33 40.625C33 37.9326 35.1826 35.75 37.875 35.75C40.5674 35.75 42.75 37.9326 42.75 40.625Z" fill="white" />
