@@ -3,8 +3,12 @@ import Layout from '../layout/Layout';
 import HeadingTitle from '../components/heading-title/HeadingTitle';
 import InputVerif from '../components/input-form/InputVerif';
 import { ButtonValid } from '../components/button/ButtonValid';
+import { useEffect, useContext } from 'react/cjs/react.development';
+import { RegisterContext } from '../context/AllContext';
+
 
 const HalamanVerifikasi = () => {
+
   return (
     <Layout>
       <HeadingTitle>
@@ -24,7 +28,7 @@ const HalamanVerifikasi = () => {
         <p className="lead-five" style={{ textAlign: "center" }}>Masukan OTP yang telah dikirim ke nomor telepon anda</p>
       </div>
       <InputVerif />
-      
+
     </Layout>
   )
 }

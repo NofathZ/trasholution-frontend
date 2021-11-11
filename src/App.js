@@ -12,7 +12,6 @@ import ProfilTrashpicker from './views/ProfilTrashpicker'
 import TerimaPermintaan from './views/TerimaPermintaan'
 import SampahPenggunaDiterima from './views/SampahPenggunaDiterima'
 import HalamanDaftarSampah from './views/HalamanDaftarSampah'
-import { UserContext } from './context/UserContext'
 import ProtectedRouteDefault from './components/protected-route/ProtectedRouteDefault'
 import ProtectedRoutePengguna from './components/protected-route/ProtectedRoutePengguna'
 import ProtectedRouteTrashpicker from './components/protected-route/ProtectedRouteTrashpicker'
@@ -24,26 +23,33 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { RegisterContext } from './context/AllContext'
 
 function App() {
 
+  const [userData, setUserData] = useState({
+    nama: "nofathaa"
+  })
 
   return (
     <Router>
-      <div>
+      <RegisterContext.Provider value={{ userData, setUserData }}>
         <Switch>
 
           {/* Auth */}
           <AuthProtectedRoute path="/login">
             <HalamanLogin />
           </AuthProtectedRoute>
+
+          {/* <RegisterContext.Provider value={{ userData, setUserData }}> */}
           <AuthProtectedRoute path="/register">
             <HalamanRegister />
           </AuthProtectedRoute>
           <AuthProtectedRoute path="/verifikasi">
             <HalamanVerifikasi />
           </AuthProtectedRoute>
+          {/* </RegisterContext.Provider> */}
 
           {/* Halaman Pengguna */}
           <ProtectedRouteDefault path="/" exact>
@@ -82,7 +88,7 @@ function App() {
             <TerimaPermintaan />
           </ProtectedRouteTrashpicker>
         </Switch>
-      </div>
+      </RegisterContext.Provider>
     </Router>
   );
 }

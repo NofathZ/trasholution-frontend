@@ -1,6 +1,8 @@
-import { useState } from 'react'
-import { Redirect } from 'react-router'
+import { useState, useContext, useEffect } from 'react'
+import { Redirect, useHistory } from 'react-router'
 import { ButtonValid } from '../button/ButtonValid'
+import { RegisterContext } from '../../context/AllContext'
+import API from '../../api/api'
 import './InputForm.css'
 
 const InputVerif = () => {
@@ -9,15 +11,47 @@ const InputVerif = () => {
   const [number2, setNumber2] = useState(null)
   const [number3, setNumber3] = useState(null)
   const [number4, setNumber4] = useState(null)
-  const [statusRedirect, setStatusRedirect] = useState(false)
+  // const [statusRedirect, setStatusRedirect] = useState(false)
 
-  const handleInput = (e) => {
+  const { userData, setUserData } = useContext(RegisterContext)
+
+  const history = useHistory()
+
+  const handleInput = async (e) => {
     e.preventDefault()
     try {
-      console.log("Buat logicnya")
-      setStatusRedirect(true)
+      const { nama, email, phone, password, regisAs } = userData
+      const otpSendTo = "+62" + phone.substring(1)
+      const otp = `${number1 + number2 + number3 + number4}`
+      const userDataReady = { nama, email, phone: otpSendTo, password, otp }
+
+      console.log(userDataReady)
+      console.log(otpSendTo)
+      console.log(regisAs)
+
+      // Register
+      if (regisAs == "pengguna") {
+        const resultReg = await API.post('/api/p/register', userDataReady, {
+          headers: {
+            'Content-Type': "application/json"
+          }
+        })
+        if (resultReg.data.success) {
+          history.push('/login')
+        }
+      }
+      else if (regisAs == "trashpicker") {
+        const resultReg = await API.post('/api/t/register', userDataReady, {
+          headers: {
+            'Content-Type': "application/json"
+          }
+        })
+        if (resultReg.data.success) {
+          history.push('/login')
+        }
+      }
     }
-    catch(err) {
+    catch (err) {
       console.error(err)
     }
   }
@@ -42,7 +76,7 @@ const InputVerif = () => {
 
       <ButtonValid className="heading-five" style={{ marginTop: "20px" }}>Kirim</ButtonValid>
 
-      {statusRedirect ? <Redirect to={"/"} /> : ""}
+      {/* {statusRedirect ? <Redirect to={"/"} /> : ""} */}
     </form>
   )
 }

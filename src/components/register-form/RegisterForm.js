@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import InputForm from "../input-form/InputForm"
 import { InputRadio } from "../input-form/InputRadio"
 import { ButtonValid } from "../button/ButtonValid"
 import API from "../../api/api.js"
 import { Redirect } from "react-router"
+import { RegisterContext } from "../../context/AllContext"
 
 const RegisterForm = () => {
 
@@ -14,6 +15,7 @@ const RegisterForm = () => {
   const [regisAs, setRegisAs] = useState("")
   const [statusRedirect, setStatusRedirect] = useState(false)
 
+  const { userData, setUserData } = useContext(RegisterContext)
 
   const handleInput = async (e) => {
     e.preventDefault()
@@ -22,26 +24,32 @@ const RegisterForm = () => {
         nama: name,
         email,
         phone,
-        password
+        password,
+        regisAs
       }
-      if (regisAs == "pengguna") {
-        await API.post('/api/p/register', postData, {
-          headers: {
-            'Content-Type': "application/json"
-          }
-        })
-      }
-      else if (regisAs == "trashpicker") {
-        await API.post('/api/t/register', postData, {
-          headers: {
-            'Content-Type': "application/json"
-          }
-        })
-      }
+
+      const otpSendTo = "+62" + phone.substring(1)
+      await API.get(`/api/send-otp/${otpSendTo}`)
+
+      setUserData(postData)
+      // if (regisAs == "pengguna") {
+      //   await API.post('/api/p/register', postData, {
+      //     headers: {
+      //       'Content-Type': "application/json"
+      //     }
+      //   })
+      // }
+      // else if (regisAs == "trashpicker") {
+      //   await API.post('/api/t/register', postData, {
+      //     headers: {
+      //       'Content-Type': "application/json"
+      //     }
+      //   })
+      // }
 
       setStatusRedirect(true)
     }
-    catch(err) {
+    catch (err) {
       console.error(err)
     }
   }
