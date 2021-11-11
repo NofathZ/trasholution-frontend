@@ -11,6 +11,7 @@ const FormInputSampah = () => {
   const [outputList, setOutputList] = useState([])
   const [inputList, setInputList] = useState([])
   const [namaSampah, setNamaSampah] = useState([])
+  const token = localStorage.getItem('token')
 
   useEffect(async () => {
     const semuaSampah = []
@@ -39,8 +40,17 @@ const FormInputSampah = () => {
     setIdx(idx + 1)
   };
 
-  const showOutput = (e) => {
+  const showOutput = async (e) => {
     e.preventDefault()
+    const dataReady = {
+      "daftar_sampah": outputList
+    }
+
+    await API.get('/api/p/jual-sampah', dataReady, {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    })
   }
 
   return (

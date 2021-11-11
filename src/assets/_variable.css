@@ -16,6 +16,11 @@ p {
   vertical-align: baseline;
 }
 
+/* .leaflet-container {
+  width: 100%;
+  height: 50vh;
+} */
+
 /* Color */
 .main-color-bg {
   background-color: #35BE80;
