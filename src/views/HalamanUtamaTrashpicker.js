@@ -10,17 +10,15 @@ import API from '../api/api'
 const HalamanUtamaTrashpicker = () => {
 
   const [status, setStatus] = useState(false)
-
+  const [namaUser, setNamaUser] = useState("Trashpicker")
   const token = localStorage.getItem('token')
 
   useEffect(async () => {
-
     const profile = await API.get('/api/t/profile', {
       headers: {
         Authorization: `Bearer ${token}`
       }
     })
-
     setStatus(profile.data.data.availability)
   }, [])
 
@@ -43,6 +41,16 @@ const HalamanUtamaTrashpicker = () => {
     }
   }
 
+
+  useEffect(async () => {
+    const token = await localStorage.getItem('token')
+    const nama = await localStorage.getItem('nama')
+    
+    if (token) {
+      setNamaUser(nama)
+    }
+  },[])
+
   return (
     <Layout className="bg-halaman-utama-trashpicker">
       <HeadingTitle>
@@ -51,7 +59,7 @@ const HalamanUtamaTrashpicker = () => {
       </HeadingTitle>
       <div style={{ textAlign: "center" }}>
         <span className="lead-three main-color">Hallo </span>
-        <span className="heading-three main-color">Trashpicker!</span>
+        <span className="heading-three main-color">{namaUser}</span>
       </div>
       <div style={{ textAlign: "center", marginBottom: "56px" }}>
         <span className="lead-six secondary-color">You're </span>

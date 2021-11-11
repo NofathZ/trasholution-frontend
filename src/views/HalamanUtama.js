@@ -6,10 +6,19 @@ import MenuBox from '../components/menu-box/MenuBox';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import "./HalamanUtama.css"
+import { useState } from 'react/cjs/react.development';
 
 const HalamanUtama = () => {
 
-  useEffect(() => {
+  const [namaUser, setNamaUser] = useState("Pengguna")
+
+  useEffect(async () => {
+    const token = await localStorage.getItem('token')
+    const nama = await localStorage.getItem('nama')
+    
+    if (token) {
+      setNamaUser(nama)
+    }
   },[])
 
   return (
@@ -20,7 +29,7 @@ const HalamanUtama = () => {
       </HeadingTitle>
       <div style={{ textAlign: "center", marginBottom: "56px" }}>
         <span className="lead-three main-color">Hallo </span>
-        <span className="heading-three main-color">Alfonsus!</span>
+        <span className="heading-three main-color">{namaUser}</span>
       </div>
       <MenuBox />
       {localStorage.getItem("token") ? "" :

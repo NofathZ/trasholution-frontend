@@ -32,21 +32,6 @@ const RegisterForm = () => {
       await API.get(`/api/send-otp/${otpSendTo}`)
 
       setUserData(postData)
-      // if (regisAs == "pengguna") {
-      //   await API.post('/api/p/register', postData, {
-      //     headers: {
-      //       'Content-Type': "application/json"
-      //     }
-      //   })
-      // }
-      // else if (regisAs == "trashpicker") {
-      //   await API.post('/api/t/register', postData, {
-      //     headers: {
-      //       'Content-Type': "application/json"
-      //     }
-      //   })
-      // }
-
       setStatusRedirect(true)
     }
     catch (err) {

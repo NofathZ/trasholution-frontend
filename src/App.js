@@ -28,9 +28,7 @@ import { RegisterContext } from './context/AllContext'
 
 function App() {
 
-  const [userData, setUserData] = useState({
-    nama: "nofathaa"
-  })
+  const [userData, setUserData] = useState({})
 
   return (
     <Router>

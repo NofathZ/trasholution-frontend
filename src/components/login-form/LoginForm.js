@@ -24,6 +24,7 @@ const LoginForm = () => {
     })
 
     localStorage.setItem('role', dataPengguna.data.role)
+    localStorage.setItem('nama', dataPengguna.data.data.nama)
   }
 
   const handleInput = async (e) => {
