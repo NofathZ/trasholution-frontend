@@ -40,15 +40,12 @@ function App() {
           <AuthProtectedRoute path="/login">
             <HalamanLogin />
           </AuthProtectedRoute>
-
-          {/* <RegisterContext.Provider value={{ userData, setUserData }}> */}
           <AuthProtectedRoute path="/register">
             <HalamanRegister />
           </AuthProtectedRoute>
           <AuthProtectedRoute path="/verifikasi">
             <HalamanVerifikasi />
           </AuthProtectedRoute>
-          {/* </RegisterContext.Provider> */}
 
           {/* Halaman Pengguna */}
           <ProtectedRouteDefault path="/" exact>

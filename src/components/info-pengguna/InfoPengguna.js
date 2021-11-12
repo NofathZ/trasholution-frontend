@@ -6,8 +6,7 @@ import { useEffect, useState } from 'react'
 
 const InfoPengguna = (props) => {
 
-  // console.log(props.detailInformasiPermintaan)
-
+  
 
   return (
     <div className="info-pengguna-wrapper">

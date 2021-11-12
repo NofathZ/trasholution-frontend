@@ -9,17 +9,34 @@ import { useParams } from "react-router"
 
 const TerimaPermintaanKondisiDijalan = (props) => {
 
+  // Perlu mengubah status trashpicker karena sedang dalam proses mengambil sampah
+
   const { id } = useParams()
   const token = localStorage.getItem('token')
   const [detailInformasiPermintaan, setDetailInformasiPermintaan] = useState({})
 
   useEffect(async () => {
+
+     // Update lokasi trashpicker
+    navigator.geolocation.getCurrentPosition(function (position) {
+      const locationUser = {
+        "lat": position.coords.latitude,
+        "long": position.coords.longitude
+      }
+
+      API.put('/api/t/update-lokasi', locationUser, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      })
+    });
+
     const dataDetail = await API.get(`api/t/daftar-permintaan/${id}`, {
       headers: {
         "Authorization": `Bearer ${token}`
       }
     })
-    await setDetailInformasiPermintaan(dataDetail.data.data)
+    await setDetailInformasiPermintaan(dataDetail.data.data) 
   }, [])
 
   return (

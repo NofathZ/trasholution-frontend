@@ -18,6 +18,7 @@ const TerimaPermintaan = (props) => {
     })
     setDetailInformasiPermintaan(dataDetail.data.data)
   }, [])
+
   return (
     <Layout style={{ paddingBottom: "28px" }}>
       <HeadingTitle>
