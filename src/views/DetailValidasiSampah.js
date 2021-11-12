@@ -23,33 +23,6 @@ const DetailValidasiSampah = (props) => {
     await setDaftarSampah(dataPermintaan.data.data.daftar_sampah)
   }, [])
 
-
-  // const dataValidasi = {
-  //   type: ["Nama", "Jumlah Sampah", "Gambar"],
-  //   listItems: [
-  //     {
-  //       nama: "Botol",
-  //       jumlahSampah: 1,
-  //       gambar: ""
-  //     },
-  //     {
-  //       nama: "Botol",
-  //       jumlahSampah: 1,
-  //       gambar: ""
-  //     },
-  //     {
-  //       nama: "Botol",
-  //       jumlahSampah: 1,
-  //       gambar: ""
-  //     },
-  //     {
-  //       nama: "Botol",
-  //       jumlahSampah: 1,
-  //       gambar: ""
-  //     }
-  //   ]
-  // }
-
   const tipeKolom = ["Nama", "Jumlah Sampah", "Gambar"]
 
   return (

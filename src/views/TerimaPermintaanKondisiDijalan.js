@@ -37,7 +37,6 @@ const TerimaPermintaanKondisiDijalan = (props) => {
       }
     })
     await setDetailInformasiPermintaan(dataDetail.data.data) 
-    console.log(dataDetail.data.data)
   }, [])
 
   return (

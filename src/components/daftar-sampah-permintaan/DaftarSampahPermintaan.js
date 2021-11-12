@@ -22,9 +22,9 @@ const DaftarSampahPermintaan = (props) => {
   return (
     <div className="daftar-permintaan-box main-color-bg">
 
-      {daftarSampahPengguna.map(sampah => {
+      {daftarSampahPengguna.map((sampah, idx) => {
         return (
-          <div className="daftar-row">
+          <div className="daftar-row" key={idx}>
             <div className="heading-five column-daftar-sampah">
               {sampah.sampah.jenis}
             </div>

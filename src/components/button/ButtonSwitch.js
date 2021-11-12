@@ -4,7 +4,6 @@ const ButtonSwitch = (props) => {
 
   function changeStatus() {
     props.changeStatus()
-    // console.log('status changed')
   }
 
   return (

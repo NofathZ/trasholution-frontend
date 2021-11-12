@@ -10,16 +10,15 @@ import { useState } from 'react/cjs/react.development';
 
 const HalamanUtama = () => {
 
+  const token = localStorage.getItem('token')
+  const nama = localStorage.getItem('nama')
   const [namaUser, setNamaUser] = useState("Pengguna")
 
   useEffect(async () => {
-    const token = await localStorage.getItem('token')
-    const nama = await localStorage.getItem('nama')
-    
     if (token) {
       setNamaUser(nama)
     }
-  },[])
+  }, [])
 
   return (
     <Layout className="bg-halaman-utama">
@@ -32,7 +31,7 @@ const HalamanUtama = () => {
         <span className="heading-three main-color">{namaUser}</span>
       </div>
       <MenuBox />
-      {localStorage.getItem("token") ? "" :
+      {token ? "" :
         <Link className="login-btn heading-six main-color" style={{ textDecoration: "none" }} to={'/login'}>Login</Link>
       }
     </Layout>

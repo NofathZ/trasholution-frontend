@@ -129,7 +129,7 @@ const LoginForm = () => {
           />
           <label
             className="lead-five label-radio secondary-color"
-            for="pengguna"
+            htmlFor="pengguna"
           >
             Pengguna
           </label>
@@ -145,7 +145,7 @@ const LoginForm = () => {
           />
           <label
             className="lead-five label-radio secondary-color"
-            for="trashpicker"
+            htmlFor="trashpicker"
           >
             Trashpicker
           </label>

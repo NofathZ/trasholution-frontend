@@ -11,10 +11,7 @@ const InputVerif = () => {
   const [number2, setNumber2] = useState(null)
   const [number3, setNumber3] = useState(null)
   const [number4, setNumber4] = useState(null)
-  // const [statusRedirect, setStatusRedirect] = useState(false)
-
   const { userData, setUserData } = useContext(RegisterContext)
-
   const history = useHistory()
 
   const handleInput = async (e) => {
@@ -24,10 +21,6 @@ const InputVerif = () => {
       const otpSendTo = "+62" + phone.substring(1)
       const otp = `${number1 + number2 + number3 + number4}`
       const userDataReady = { nama, email, phone: otpSendTo, password, otp }
-
-      // console.log(userDataReady)
-      // console.log(otpSendTo)
-      // console.log(regisAs)
 
       // Register
       if (regisAs == "pengguna") {

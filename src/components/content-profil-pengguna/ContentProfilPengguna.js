@@ -1,7 +1,6 @@
 import "./ContentProfilPengguna.css"
 
 const ContentProfilPengguna = (props) => {
-  console.log(props.dataPengguna)
   return (
     <div className="content-profil-box">
       <div className="menu-nav-profile">

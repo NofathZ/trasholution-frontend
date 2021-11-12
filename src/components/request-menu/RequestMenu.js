@@ -15,15 +15,14 @@ const RequestMenu = () => {
         "Authorization": `Bearer ${token}`
       }
     })
-    // console.log(daftarPermintaan.data.data)
     setDaftarPermintaan(daftarPermintaan.data.data)
   }, [])
   return (
     <>
       <h3 className="lead-three main-color" style={{ textAlign: "center" }}>Request</h3>
       <div className="line-break"></div>
-      {daftarPermintaan.map(permintaan => (
-        <Link to={`/trashpicker/terima-permintaan/${permintaan.id}`} style={{ textDecoration: "none" }}>
+      {daftarPermintaan.map((permintaan, idx) => (
+        <Link to={`/trashpicker/terima-permintaan/${permintaan.id}`} style={{ textDecoration: "none" }} key={idx}>
           <RequestBox type="Request Penjemputan" name={permintaan.nama}></RequestBox>
         </Link>
       ))}
