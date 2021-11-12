@@ -25,9 +25,9 @@ const InputVerif = () => {
       const otp = `${number1 + number2 + number3 + number4}`
       const userDataReady = { nama, email, phone: otpSendTo, password, otp }
 
-      console.log(userDataReady)
-      console.log(otpSendTo)
-      console.log(regisAs)
+      // console.log(userDataReady)
+      // console.log(otpSendTo)
+      // console.log(regisAs)
 
       // Register
       if (regisAs == "pengguna") {

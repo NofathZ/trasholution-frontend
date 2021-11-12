@@ -1,37 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../layout/Layout';
 import HeadingTitle from '../components/heading-title/HeadingTitle';
 import ValidasiBox from '../components/validasi-box/ValidasiBox';
 import "./DetailValidasiSampah.css"
 import { ButtonValid } from '../components/button/ButtonValid';
 import { ButtonInvalid } from '../components/button/ButtonInvalid';
+import { useParams } from 'react-router';
+import API from '../api/api';
 
-const DetailValidasiSampah = () => {
-  const dataValidasi = {
-    type: ["Nama", "Jumlah Sampah", "Gambar"],
-    listItems: [
-      {
-        nama: "Botol",
-        jumlahSampah: 1,
-        gambar: ""
-      },
-      {
-        nama: "Botol",
-        jumlahSampah: 1,
-        gambar: ""
-      },
-      {
-        nama: "Botol",
-        jumlahSampah: 1,
-        gambar: ""
-      },
-      {
-        nama: "Botol",
-        jumlahSampah: 1,
-        gambar: ""
+const DetailValidasiSampah = (props) => {
+  const token = localStorage.getItem("token")
+  const { id } = useParams()
+  const [daftarSampah, setDaftarSampah] = useState([])
+
+  useEffect(async () => {
+    const dataPermintaan = await API.get(`/api/t/daftar-permintaan/${id}`, {
+      headers: {
+        "Authorization": `Bearer ${token}`
       }
-    ]
-  }
+    })
+
+    await setDaftarSampah(dataPermintaan.data.data.daftar_sampah)
+  }, [])
+
+
+  // const dataValidasi = {
+  //   type: ["Nama", "Jumlah Sampah", "Gambar"],
+  //   listItems: [
+  //     {
+  //       nama: "Botol",
+  //       jumlahSampah: 1,
+  //       gambar: ""
+  //     },
+  //     {
+  //       nama: "Botol",
+  //       jumlahSampah: 1,
+  //       gambar: ""
+  //     },
+  //     {
+  //       nama: "Botol",
+  //       jumlahSampah: 1,
+  //       gambar: ""
+  //     },
+  //     {
+  //       nama: "Botol",
+  //       jumlahSampah: 1,
+  //       gambar: ""
+  //     }
+  //   ]
+  // }
+
+  const tipeKolom = ["Nama", "Jumlah Sampah", "Gambar"]
+
   return (
     <Layout>
       <HeadingTitle>
@@ -40,12 +60,12 @@ const DetailValidasiSampah = () => {
         </svg>
         <h3 className="heading-three main-color">Validasi Sampah</h3>
       </HeadingTitle>
-      <div style={{marginTop: "20px"}}>
+      <div style={{ marginTop: "20px" }}>
         <h4 className="heading-four" style={{ color: "#C9C9C9", textAlign: "center" }}>Marlina</h4>
         <div className="detail-underline-heading"></div>
         <h6 className="heading-six main-color" style={{ textAlign: "center" }}>Jl. masfistaosa no.59  </h6>
       </div>
-      <ValidasiBox dataValidasi={dataValidasi} />
+      <ValidasiBox tipeKolom={tipeKolom} daftarSampah={daftarSampah} />
       <div className="button-choice">
         <ButtonValid className="heading-five">Valid</ButtonValid>
         <ButtonInvalid className="heading-five">Invalid</ButtonInvalid>

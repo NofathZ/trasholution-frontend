@@ -1,10 +1,8 @@
-import "./MapPengguna.css"
+import "./MapTrashpickerDijalan.css"
+import { MapContainer, TileLayer, Marker } from "react-leaflet"
+import { useState, useEffect } from "react"
 
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents, useMap, useMapEvent } from "react-leaflet"
-import { useEffect, useRef, useState } from "react"
-
-const MapPengguna = (props) => {
-
+const MapTrashpickerDijalan = (props) => {
   const [position, setPosition] = useState(null)
 
   useEffect(() => {
@@ -13,9 +11,8 @@ const MapPengguna = (props) => {
     }
   }, [props.informasiPengguna])
 
-
   return (
-    <div className="map-box">
+    <div className="map-trashpicker-dijalan-box">
       {position ?
         <MapContainer center={position} zoom={13} scrollWheelZoom={true} style={{ width: "100%", height: "100%", borderRadius: "20px" }}>
           <TileLayer
@@ -24,10 +21,10 @@ const MapPengguna = (props) => {
           />
           <Marker position={position} draggable={"true"}></Marker>
         </MapContainer>
-        :
-        ""}
+        : ""
+      }
     </div>
   )
 }
 
-export default MapPengguna
+export default MapTrashpickerDijalan

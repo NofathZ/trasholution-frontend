@@ -2,6 +2,7 @@ import './FormInputSampah.css'
 import { ButtonValid } from '../button/ButtonValid'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { useHistory } from 'react-router'
 import Question from './Question'
 import API from '../../api/api'
 
@@ -12,6 +13,7 @@ const FormInputSampah = () => {
   const [inputList, setInputList] = useState([])
   const [namaSampah, setNamaSampah] = useState([])
   const token = localStorage.getItem('token')
+  const history = useHistory()
 
   useEffect(async () => {
     const semuaSampah = []
@@ -41,16 +43,36 @@ const FormInputSampah = () => {
   };
 
   const showOutput = async (e) => {
-    e.preventDefault()
-    const dataReady = {
-      "daftar_sampah": outputList
-    }
-
-    await API.get('/api/p/jual-sampah', dataReady, {
-      headers: {
-        "Authorization": `Bearer ${token}`
+    try {
+      e.preventDefault()
+      const dataReady = {
+        "daftar_sampah": outputList
       }
-    })
+
+      navigator.geolocation.getCurrentPosition(function (position) {
+        const locationUser = {
+          "lat": position.coords.latitude,
+          "long": position.coords.longitude
+        }
+
+        API.put('/api/p/update-lokasi', locationUser, {
+          headers : {
+            "Authorization": `Bearer ${token}`
+          }
+        })
+      });
+
+      await API.post('/api/p/jual-sampah', dataReady, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      })
+
+      history.push('/')
+    }
+    catch (err) {
+      console.error(err)
+    }
   }
 
   return (

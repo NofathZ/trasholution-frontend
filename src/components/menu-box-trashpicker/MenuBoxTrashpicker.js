@@ -20,7 +20,7 @@ const MenuBoxTrashpicker = (props) => {
           </svg>
         </Link>
       </ButtonMenu>
-      <ButtonMenu colorStatus={props.status ? "main-color-bg" : "secondary-color-bg"} title="Validasi Sampah">
+      {/* <ButtonMenu colorStatus={props.status ? "main-color-bg" : "secondary-color-bg"} title="Validasi Sampah">
         <Link style={{ textDecoration: "none" }} to={props.status ? '/trashpicker/detail-validasi' : ''}>
           <svg width="39" height="41" viewBox="0 0 39 41" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.04995 0.350006C1.75208 0.350006 0.699951 1.40214 0.699951 2.70001C0.699951 3.99787 1.75208 5.05001 3.04995 5.05001H5.91513L6.63319 7.92228C6.64073 7.95549 6.64897 7.98843 6.6579 8.02109L9.84739 20.7791L7.74984 22.8766C4.78901 25.8374 6.88598 30.9 11.0732 30.9H31.2498C32.5477 30.9 33.5998 29.8479 33.5998 28.55C33.5998 27.2521 32.5477 26.2 31.2498 26.2L11.0732 26.2L13.4232 23.85H28.9C29.7901 23.85 30.6038 23.3471 31.0019 22.551L38.0519 8.45096C38.4161 7.72249 38.3772 6.85736 37.949 6.16454C37.5208 5.47172 36.7644 5.05001 35.95 5.05001H10.7598L10.0298 2.13005C9.76825 1.0839 8.82829 0.350006 7.74995 0.350006H3.04995Z" fill="white" />
@@ -28,7 +28,7 @@ const MenuBoxTrashpicker = (props) => {
             <path d="M11.275 40.3C13.2218 40.3 14.8 38.7218 14.8 36.775C14.8 34.8282 13.2218 33.25 11.275 33.25C9.32815 33.25 7.74995 34.8282 7.74995 36.775C7.74995 38.7218 9.32815 40.3 11.275 40.3Z" fill="white" />
           </svg>
         </Link>
-      </ButtonMenu>
+      </ButtonMenu> */}
       <ButtonMenu colorStatus={props.status ? "main-color-bg" : "secondary-color-bg"} title="Permintaan Penjemputan">
         <Link style={{ textDecoration: "none" }} to={props.status ? '/trashpicker/jemput-sampah' : ''}>
           <svg width="53" height="46" viewBox="0 0 53 46" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -25,6 +25,7 @@ import {
 } from "react-router-dom";
 import { useState, useContext } from 'react'
 import { RegisterContext } from './context/AllContext'
+import TerimaPermintaanKondisiDijalan from './views/TerimaPermintaanKondisiDijalan'
 
 function App() {
 
@@ -76,14 +77,17 @@ function App() {
           <ProtectedRouteTrashpicker path="/trashpicker/jemput-sampah">
             <HalamanPenjemputanSampah />
           </ProtectedRouteTrashpicker>
-          <ProtectedRouteTrashpicker path="/trashpicker/detail-validasi">
+          <ProtectedRouteTrashpicker path="/trashpicker/detail-validasi/:id">
             <DetailValidasiSampah />
           </ProtectedRouteTrashpicker>
           <ProtectedRouteTrashpicker path="/trashpicker/profil-trashpicker">
             <ProfilTrashpicker />
           </ProtectedRouteTrashpicker>
-          <ProtectedRouteTrashpicker path="/trashpicker/terima-permintaan">
+          <ProtectedRouteTrashpicker exact path="/trashpicker/terima-permintaan/:id">
             <TerimaPermintaan />
+          </ProtectedRouteTrashpicker>
+          <ProtectedRouteTrashpicker path="/trashpicker/terima-permintaan/:id/dijalan">
+            <TerimaPermintaanKondisiDijalan />
           </ProtectedRouteTrashpicker>
         </Switch>
       </RegisterContext.Provider>
