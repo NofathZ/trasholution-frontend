@@ -26,6 +26,7 @@ import {
 import { useState, useContext } from 'react'
 import { RegisterContext } from './context/AllContext'
 import TerimaPermintaanKondisiDijalan from './views/TerimaPermintaanKondisiDijalan'
+import HalamanNotifikasi from './views/HalamanNotifikasi'
 
 function App() {
 
@@ -86,6 +87,11 @@ function App() {
           <ProtectedRouteTrashpicker path="/trashpicker/terima-permintaan/:id/dijalan">
             <TerimaPermintaanKondisiDijalan />
           </ProtectedRouteTrashpicker>
+
+          <Route path="/pemberitahuan">
+            <HalamanNotifikasi></HalamanNotifikasi>
+          </Route>
+
         </Switch>
       </RegisterContext.Provider>
     </Router>

@@ -1,0 +1,37 @@
+.btn-notifikasi-redirect-halaman {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+
+  width: 202px;
+  height: 39px;
+  border-radius: 50px;
+  background-color: #35be80;
+  color: white;
+
+  margin: 0 auto;
+  display: block;
+}
+
+.notifikasi-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.notifikasi-wrapper > * {
+  margin: 20px 0;
+}
+
+.notification-page-bg {
+  background-image: url('../assets/menu-icon-bg.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+
+}
