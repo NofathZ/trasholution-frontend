@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import LayoutFixed from '../layout/LayoutFixed';
 import HeadingTitle from '../components/heading-title/HeadingTitle';
 import "./ProfilPengguna.css"
 import ContentProfilTrashpicker from '../components/content-profil-trashpicker/ContentProfilTrashpicker';
+import API from '../api/api';
 
 const ProfilTrashpicker = () => {
+
+  const [dataTrashpicker, setDataTrashpicker] = useState([])
+  const token = localStorage.getItem('token')
+
+  useEffect(async () => {
+    const dataTrashpicker = await API.get('/api/t/profile', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+
+    setDataTrashpicker(dataTrashpicker.data.data)
+  }, [])
+
   return (
     <LayoutFixed className="outer-padding-profil-pengguna">
       <div className="container-profil-pengguna">
@@ -15,7 +30,7 @@ const ProfilTrashpicker = () => {
           <div></div>
         </HeadingTitle>
         <img className="img-user" />
-        <h3 className="heading-three" style={{ color: "white", textAlign: "center" }}>alfonsus marlina</h3>
+        <h3 className="heading-three" style={{ color: "white", textAlign: "center" }}>{dataTrashpicker.nama}</h3>
         <ContentProfilTrashpicker />
       </div>
     </LayoutFixed>

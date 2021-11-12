@@ -1,6 +1,7 @@
 import "./ContentProfilPengguna.css"
 
 const ContentProfilPengguna = (props) => {
+  console.log(props.dataPengguna)
   return (
     <div className="content-profil-box">
       <div className="menu-nav-profile">
@@ -16,7 +17,7 @@ const ContentProfilPengguna = (props) => {
           </svg>
         </div>
         <div className="total-money">
-          <h3 className="lead-three" style={{ color: "white" }}>Rp. 69.420,00</h3>
+          <h3 className="lead-three" style={{ color: "white" }}>Rp. {props.dataPengguna.saldo}</h3>
         </div>
       </div>
 

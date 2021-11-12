@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 
 const MapTrashpickerDijalan = (props) => {
   const [position, setPosition] = useState(null)
+  const [positionTwo, setPositionTwo] = useState([-4, -4])
 
   useEffect(() => {
     if (props.informasiPengguna) {
@@ -20,6 +21,7 @@ const MapTrashpickerDijalan = (props) => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <Marker position={position} draggable={"true"}></Marker>
+          <Marker position={positionTwo} draggable={"true"}></Marker>
         </MapContainer>
         : ""
       }
