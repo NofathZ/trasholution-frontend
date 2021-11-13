@@ -3,10 +3,19 @@ import MapPengguna from '../map-pengguna/MapPengguna'
 import { Link } from 'react-router-dom'
 import "./InfoPengguna.css"
 import { useEffect, useState } from 'react'
+import API from '../../api/api'
 
 const InfoPengguna = (props) => {
 
-  
+  const token = localStorage.getItem('token')
+
+  const terimaPermintaan = async () => {
+    await API.get(`api/t/daftar-permintaan/${props.id}/tunggu`, {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    })
+  }
 
   return (
     <div className="info-pengguna-wrapper">
@@ -19,7 +28,7 @@ const InfoPengguna = (props) => {
       <h6 className="lead-six secondary-color" style={{ margin: "9px 0" }}>Detail Sampah</h6>
       <DaftarSampahPermintaan daftarSampahPengguna={props.detailInformasiPermintaan.daftar_sampah} />
       <Link to={`/trashpicker/terima-permintaan/${props.id}/dijalan`} style={{ textDecoration: "none" }}>
-        <button className="terima-permintaan-btn heading-five">Terima Permintaan</button>
+        <button className="terima-permintaan-btn heading-five" onClick={terimaPermintaan}>Terima Permintaan</button>
       </Link>
     </div>
   )

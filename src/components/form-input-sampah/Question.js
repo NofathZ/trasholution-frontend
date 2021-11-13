@@ -24,7 +24,7 @@ const Question = (props) => {
         <input id={`jumlah-sampah${props.idx}`} className="input-sampah-column" type="number" onChange={output} required />
       </span>
       <span className="lead-seven list-item-input">
-        <button className="lihat-btn">Lihat</button>
+        <button type="button" className="lihat-btn">Lihat</button>
       </span>
     </div>
   )

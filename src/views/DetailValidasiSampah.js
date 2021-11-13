@@ -5,13 +5,17 @@ import ValidasiBox from '../components/validasi-box/ValidasiBox';
 import "./DetailValidasiSampah.css"
 import { ButtonValid } from '../components/button/ButtonValid';
 import { ButtonInvalid } from '../components/button/ButtonInvalid';
-import { useParams } from 'react-router';
+import { useParams, useHistory } from 'react-router';
 import API from '../api/api';
 
 const DetailValidasiSampah = (props) => {
+
+  // onclick Valid, trus hit api /selesai
+
   const token = localStorage.getItem("token")
   const { id } = useParams()
   const [daftarSampah, setDaftarSampah] = useState([])
+  const history = useHistory()
 
   useEffect(async () => {
     const dataPermintaan = await API.get(`/api/t/daftar-permintaan/${id}`, {
@@ -24,6 +28,20 @@ const DetailValidasiSampah = (props) => {
   }, [])
 
   const tipeKolom = ["Nama", "Jumlah Sampah", "Gambar"]
+
+  const validasiSelesai = async () => {
+    const data = await API.get(`/api/t/daftar-permintaan/${id}/selesai`, {
+      headers : {
+        "Authorization": `Bearer ${token}`
+      }
+    })
+
+    console.log(data)
+
+    // Seharusnya disini ada hapus current penjualan untuk menghapus current yang sudah selesai
+
+    history.push('/trashpicker')
+  }
 
   return (
     <Layout>
@@ -40,7 +58,7 @@ const DetailValidasiSampah = (props) => {
       </div>
       <ValidasiBox tipeKolom={tipeKolom} daftarSampah={daftarSampah} />
       <div className="button-choice">
-        <ButtonValid className="heading-five">Valid</ButtonValid>
+        <ButtonValid className="heading-five" onClick={validasiSelesai}>Valid</ButtonValid>
         <ButtonInvalid className="heading-five">Invalid</ButtonInvalid>
       </div>
     </Layout>

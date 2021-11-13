@@ -1,4 +1,3 @@
-import { ButtonValid } from "../components/button/ButtonValid"
 import Layout from "../layout/Layout"
 import "./HalamanNotifikasi.css"
 

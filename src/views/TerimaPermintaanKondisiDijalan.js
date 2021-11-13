@@ -37,6 +37,15 @@ const TerimaPermintaanKondisiDijalan = (props) => {
       }
     })
     await setDetailInformasiPermintaan(dataDetail.data.data) 
+
+    
+    // const data = await API.get(`api/t/daftar-permintaan/${id}/tunggu`, {
+    //   headers: {
+    //     "Authorization": `Bearer ${token}`
+    //   }
+    // })
+
+    // console.log(data)
   }, [])
 
   return (

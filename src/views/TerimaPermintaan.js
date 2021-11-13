@@ -11,7 +11,7 @@ const TerimaPermintaan = (props) => {
   const [detailInformasiPermintaan, setDetailInformasiPermintaan] = useState([])
 
   useEffect(async () => {
-    const dataDetail = await API.get(`api/t/daftar-permintaan/${id}`, {
+    const dataDetail = await API.get(`/api/t/daftar-permintaan/${id}`, {
       headers: {
         "Authorization": `Bearer ${token}`
       }

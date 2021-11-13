@@ -1,8 +1,11 @@
 import Layout from '../layout/Layout'
 import HeadingTitle from '../components/heading-title/HeadingTitle'
 import FormInputSampah from '../components/form-input-sampah/FormInputSampah';
+import { useEffect } from 'react';
+import API from '../api/api';
 
 const FormJualSampah = () => {
+
   return (
     <Layout>
       <HeadingTitle>

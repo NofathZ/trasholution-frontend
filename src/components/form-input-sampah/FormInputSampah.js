@@ -56,7 +56,7 @@ const FormInputSampah = () => {
         }
 
         API.put('/api/p/update-lokasi', locationUser, {
-          headers : {
+          headers: {
             "Authorization": `Bearer ${token}`
           }
         })
@@ -68,7 +68,9 @@ const FormInputSampah = () => {
         }
       })
 
-      history.push('/')
+      // seharusnya disini ada set current penjualan (untuk mengubah current yang lama)
+
+      history.push('/menunggu-trashpicker')
     }
     catch (err) {
       console.error(err)
@@ -92,8 +94,8 @@ const FormInputSampah = () => {
           </svg>
         </button>
       </div>
-      {/* <Link to={'/permintaan-diterima'} style={{ textDecoration: "none" }}> */}
-      <ButtonValid className="lead-five" style={{ marginTop: "28px" }}>Jual</ButtonValid>
+      {/* <Link to={'/menunggu-trashpicker'} style={{ textDecoration: "none" }}> */}
+        <ButtonValid className="lead-five" type="submit" style={{ marginTop: "28px" }}>Jual</ButtonValid>
       {/* </Link> */}
     </form>
   )

@@ -27,6 +27,7 @@ import { useState, useContext } from 'react'
 import { RegisterContext } from './context/AllContext'
 import TerimaPermintaanKondisiDijalan from './views/TerimaPermintaanKondisiDijalan'
 import HalamanNotifikasi from './views/HalamanNotifikasi'
+import MenungguTrashpicker from './views/MenungguTrashpicker'
 
 function App() {
 
@@ -55,8 +56,8 @@ function App() {
           <ProtectedRoutePengguna path="/jual-sampah">
             <FormJualSampah />
           </ProtectedRoutePengguna>
-          <ProtectedRoutePengguna path="/saldo">
-            <FormPencairanSaldo />
+          <ProtectedRoutePengguna path="/menunggu-trashpicker">
+            <MenungguTrashpicker />
           </ProtectedRoutePengguna>
           <ProtectedRoutePengguna path="/profil-pengguna">
             <ProfilPengguna />
@@ -67,6 +68,9 @@ function App() {
           <ProtectedRouteDefault path="/daftar-sampah">
             <HalamanDaftarSampah />
           </ProtectedRouteDefault>
+          <ProtectedRoutePengguna path="/saldo">
+            <FormPencairanSaldo />
+          </ProtectedRoutePengguna>
 
           {/* Halaman Trashpicker */}
           <ProtectedRouteTrashpicker path="/trashpicker" exact>
@@ -75,26 +79,26 @@ function App() {
           <ProtectedRouteTrashpicker path="/trashpicker/jemput-sampah">
             <HalamanPenjemputanSampah />
           </ProtectedRouteTrashpicker>
-          <ProtectedRouteTrashpicker path="/trashpicker/detail-validasi/:id">
-            <DetailValidasiSampah />
-          </ProtectedRouteTrashpicker>
-          <ProtectedRouteTrashpicker path="/trashpicker/profil-trashpicker">
-            <ProfilTrashpicker />
-          </ProtectedRouteTrashpicker>
           <ProtectedRouteTrashpicker exact path="/trashpicker/terima-permintaan/:id">
             <TerimaPermintaan />
           </ProtectedRouteTrashpicker>
           <ProtectedRouteTrashpicker path="/trashpicker/terima-permintaan/:id/dijalan">
             <TerimaPermintaanKondisiDijalan />
           </ProtectedRouteTrashpicker>
+          <ProtectedRouteTrashpicker path="/trashpicker/detail-validasi/:id">
+            <DetailValidasiSampah />
+          </ProtectedRouteTrashpicker>
+          <ProtectedRouteTrashpicker path="/trashpicker/profil-trashpicker">
+            <ProfilTrashpicker />
+          </ProtectedRouteTrashpicker>
 
-          <Route path="/pemberitahuan">
+          {/* <Route path="/pemberitahuan">
             <HalamanNotifikasi></HalamanNotifikasi>
-          </Route>
+          </Route> */}
 
         </Switch>
       </RegisterContext.Provider>
-    </Router>
+    </Router >
   );
 }
 
