@@ -9,15 +9,12 @@ import { useParams } from "react-router"
 
 const TerimaPermintaanKondisiDijalan = (props) => {
 
-  // Perlu mengubah status trashpicker karena sedang dalam proses mengambil sampah
-
   const { id } = useParams()
   const token = localStorage.getItem('token')
   const [detailInformasiPermintaan, setDetailInformasiPermintaan] = useState({})
 
   useEffect(async () => {
 
-     // Update lokasi trashpicker
     navigator.geolocation.getCurrentPosition(function (position) {
       const locationUser = {
         "lat": position.coords.latitude,
