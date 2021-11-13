@@ -3,8 +3,26 @@ import HeadingTitle from '../components/heading-title/HeadingTitle'
 import FormInputSampah from '../components/form-input-sampah/FormInputSampah';
 import { useEffect } from 'react';
 import API from '../api/api';
+import { useHistory } from 'react-router';
 
 const FormJualSampah = () => {
+
+  const token = localStorage.getItem('token')
+  const history = useHistory()
+
+  useEffect(async () => {
+    const currentPenjualan = await API.get('/api/p/current-penjualan', {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    })
+
+    if (currentPenjualan.data.data != null) {
+        history.push('/menunggu-trashpicker')
+    }
+
+    console.log(currentPenjualan.data)
+  }, [])
 
   return (
     <Layout>

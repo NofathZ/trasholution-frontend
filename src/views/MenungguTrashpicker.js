@@ -47,6 +47,7 @@ const MenungguTrashpicker = () => {
   };
 
   useEffect(async () => {
+
     const pusher = new Pusher("2961fc07477b62c13f9d", {
       cluster: "ap1",
       authorizer: authorizer,
@@ -57,8 +58,6 @@ const MenungguTrashpicker = () => {
         "Authorization": `Bearer ${token}`
       }
     })
-
-    console.log(currentPenjualan.data.data.penjualan.id)
 
     const channel = pusher.subscribe(`private-penjualan-sampah.${currentPenjualan.data.data.penjualan.id}`);
 
@@ -74,9 +73,12 @@ const MenungguTrashpicker = () => {
       }
     });
 
+    if (currentPenjualan.data.data.penjualan.id_trashpicker != null) {
+      history.push('/permintaan-diterima')
+    }
+
   }, []);
 
-  // const token = localStorage.getItem('token')
   const [dataPenjualan, setDataPenjualan] = useState([])
 
   useEffect(async () => {
@@ -87,7 +89,6 @@ const MenungguTrashpicker = () => {
     })
 
     setDataPenjualan(dataPenjualan.data)
-    // console.log(dataPenjualan.data)
   }, [])
 
   return (

@@ -3,22 +3,25 @@ import Layout from '../layout/Layout';
 import HeadingTitle from '../components/heading-title/HeadingTitle';
 import ThLogo from '../assets/th-logo.png'
 import RequestMenu from '../components/request-menu/RequestMenu';
-import api from '../api/api';
+import API from '../api/api';
+import { useHistory } from 'react-router';
 
 const HalamanPenjemputanSampah = () => {
 
+  const history = useHistory()
+
   useEffect(async () => {
     const token = localStorage.getItem('token')
-    const data = await api.get('/api/t/current-penjemputan', {
+    const currentPenjemputan = await API.get('/api/t/current-penjemputan', {
       headers: {
         "Authorization": `Bearer ${token}`
       }
     })
 
-    console.log(data)
+    if (currentPenjemputan.data.data != null) {
+      history.push(`/trashpicker/terima-permintaan/${currentPenjemputan.data.data.id}/dijalan`)
+    }
   },[])
-
-  // ngetes doang
 
   return (
     <Layout>

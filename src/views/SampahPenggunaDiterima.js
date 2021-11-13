@@ -3,11 +3,13 @@ import HeadingTitle from '../components/heading-title/HeadingTitle'
 import InfoTrashpicker from '../components/info-trashpicker/InfoTrashpicker'
 import { useEffect, useState } from 'react'
 import API from '../api/api'
+import { useHistory } from 'react-router'
 
 const SampahPenggunaDiterima = () => {
 
   const token = localStorage.getItem('token')
   const [dataPenjualan, setDataPenjualan] = useState([])
+  const history = useHistory()
 
   useEffect(async () => {
     const dataPenjualan = await API.get('/api/p/current-penjualan', {
@@ -17,7 +19,10 @@ const SampahPenggunaDiterima = () => {
     })
 
     setDataPenjualan(dataPenjualan.data)
-    // console.log(dataPenjualan.data)
+    
+    if (dataPenjualan.data.data == null) {
+      history.push('/')
+    }
   }, [])
   
   return (

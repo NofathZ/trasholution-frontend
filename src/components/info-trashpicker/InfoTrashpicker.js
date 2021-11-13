@@ -4,15 +4,6 @@ import MapTrashpicker from "../map-trashpicker/MapTrashpicker"
 import { useEffect } from "react"
 
 const InfoTrashpicker = (props) => {
-
-  // console.log(props.dataPenjualan)
-
-  // useEffect(() => {
-  //   if (props.dataPenjualan.data) {
-  //     console.log("Sedang melakukan penjualan")
-  //   }
-  // }, [])
-
   return (
     <div className="info-pengguna-wrapper">
       <h6 className="lead-six secondary-color" style={{marginTop:"21px"}}>Nama Trashpicker</h6>

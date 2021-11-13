@@ -35,11 +35,6 @@ const DetailValidasiSampah = (props) => {
         "Authorization": `Bearer ${token}`
       }
     })
-
-    console.log(data)
-
-    // Seharusnya disini ada hapus current penjualan untuk menghapus current yang sudah selesai
-
     history.push('/trashpicker')
   }
 

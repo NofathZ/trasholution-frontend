@@ -5,8 +5,6 @@ const MapTrashpicker = (props) => {
   // 1. Butuh API info trashpicker
   // 2. Butuh API untuk mendapat lokasi trashpicker
 
-  console.log(props.lokasi)
-
   const position = [51.505, -0.09]
 
   return (
