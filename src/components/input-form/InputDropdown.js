@@ -1,14 +1,17 @@
 import './InputDropdown.css'
 
 const InputDropdown = (props) => {
+
+  function setTipe(val) {
+    props.onChange(val)
+  }
+
   return (
-    <div >
-      <select className="money-tipe" style={{ color: "white" }}>
-        {props.dropdownVal.map((item, idx) => (
-          <option value={item} key={idx}>{item}</option>
-        ))}
-      </select>
-    </div>
+    <select className="money-tipe" style={{ color: "white" }} onChange={(e) => setTipe(e.target.value)}>
+      {props.dropdownVal.map((item, idx) => (
+        <option value={item} key={idx}>{item}</option>
+      ))}
+    </select>
   )
 }
 

@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../layout/Layout';
 import HeadingTitle from '../components/heading-title/HeadingTitle';
 import SaldoInfo from '../components/saldo/SaldoInfo';
 import Withdraw from '../components/saldo/Withdraw';
+import API from '../api/api';
 
 const FormPencairanSaldo = () => {
+
+  const token = localStorage.getItem('token')
+  const [saldo, setSaldo] = useState(0)
+
+  useEffect(async () => {
+    const dataPengguna = await API.get('/api/p/profile', {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    })
+
+    setSaldo(dataPengguna.data.data.saldo)
+  }, [])
+
   return (
     <Layout>
       <HeadingTitle>
@@ -13,7 +28,7 @@ const FormPencairanSaldo = () => {
         </svg>
         <h3 className="heading-three main-color">Pencairan Saldo</h3>
       </HeadingTitle>
-      <SaldoInfo />
+      <SaldoInfo saldo={saldo} />
       <Withdraw />
     </Layout>
   )
