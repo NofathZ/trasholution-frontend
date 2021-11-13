@@ -12,13 +12,13 @@ const HalamanUtama = () => {
 
   const token = localStorage.getItem('token')
   const nama = localStorage.getItem('nama')
-  const [namaUser, setNamaUser] = useState("Pengguna")
+  // const [namaUser, setNamaUser] = useState("Pengguna")
 
-  useEffect(async () => {
-    if (token) {
-      setNamaUser(nama)
-    }
-  }, [])
+  // useEffect(async () => {
+  //   if (token) {
+  //     setNamaUser(nama)
+  //   }
+  // }, [])
 
   return (
     <Layout className="bg-halaman-utama">
@@ -28,7 +28,7 @@ const HalamanUtama = () => {
       </HeadingTitle>
       <div style={{ textAlign: "center", marginBottom: "56px" }}>
         <span className="lead-three main-color">Hallo </span>
-        <span className="heading-three main-color">{namaUser}</span>
+        <span className="heading-three main-color">{nama || "Pengguna"}</span>
       </div>
       <MenuBox />
       {token ? "" :

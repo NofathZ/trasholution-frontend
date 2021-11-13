@@ -10,6 +10,7 @@ const MenuBox = () => {
     if (localStorage.getItem('token')) {
       localStorage.removeItem('token')
       localStorage.removeItem('role')
+      localStorage.removeItem('nama')
       window.location.reload('/')
     }
   }
