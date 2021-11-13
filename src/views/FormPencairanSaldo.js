@@ -9,6 +9,7 @@ const FormPencairanSaldo = () => {
 
   const token = localStorage.getItem('token')
   const [saldo, setSaldo] = useState(0)
+  const [phone, setPhone] = useState(0)
 
   useEffect(async () => {
     const dataPengguna = await API.get('/api/p/profile', {
@@ -17,6 +18,7 @@ const FormPencairanSaldo = () => {
       }
     })
 
+    setPhone(dataPengguna.data.data.phone)
     setSaldo(dataPengguna.data.data.saldo)
   }, [])
 
@@ -29,7 +31,7 @@ const FormPencairanSaldo = () => {
         <h3 className="heading-three main-color">Pencairan Saldo</h3>
       </HeadingTitle>
       <SaldoInfo saldo={saldo} />
-      <Withdraw />
+      <Withdraw phone={phone} />
     </Layout>
   )
 }

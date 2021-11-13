@@ -5,7 +5,7 @@ import { useState } from "react"
 import API from "../../api/api"
 import { useHistory } from "react-router"
 
-const Withdraw = () => {
+const Withdraw = (props) => {
   const dropdownVal = ["OVO", "GOPAY"]
   const token = localStorage.getItem('token')
   const history = useHistory()
@@ -44,7 +44,8 @@ const Withdraw = () => {
       </div>
       <div style={{ paddingTop: "24px" }}>
         <h6 className="lead-six label-title" style={{ color: "white" }}>Nomor Telepon</h6>
-        <InputForm name="nominal" />
+        {/* <InputForm name="nominal" /> */}
+        <h6 className="heading-six label-title" style={{ textAlign: 'left', color: "white" }}>{props.phone}</h6>
       </div>
       <button type="submit" className="withdraw-btn lead-five">Cairkan</button>
     </form>
