@@ -20,8 +20,6 @@ const FormJualSampah = () => {
     if (currentPenjualan.data.data != null) {
         history.push('/menunggu-trashpicker')
     }
-
-    console.log(currentPenjualan.data)
   }, [])
 
   return (

@@ -7,18 +7,23 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import "./HalamanUtama.css"
 import { useState } from 'react/cjs/react.development';
+import API from '../api/api';
 
 const HalamanUtama = () => {
 
   const token = localStorage.getItem('token')
   const nama = localStorage.getItem('nama')
-  // const [namaUser, setNamaUser] = useState("Pengguna")
 
-  // useEffect(async () => {
-  //   if (token) {
-  //     setNamaUser(nama)
-  //   }
-  // }, [])
+  useEffect(async () => { // trying
+    const token = localStorage.getItem('token')
+    const currentPenjualan = await API.get('/api/p/current-penjualan', {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    })
+
+    console.log(currentPenjualan)
+  }, [])
 
   return (
     <Layout className="bg-halaman-utama">

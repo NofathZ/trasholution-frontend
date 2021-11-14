@@ -23,15 +23,18 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { RegisterContext } from './context/AllContext'
 import TerimaPermintaanKondisiDijalan from './views/TerimaPermintaanKondisiDijalan'
 import HalamanNotifikasi from './views/HalamanNotifikasi'
 import MenungguTrashpicker from './views/MenungguTrashpicker'
+import API from './api/api'
 
 function App() {
 
   const [userData, setUserData] = useState({})
+
+  
 
   return (
     <Router>
