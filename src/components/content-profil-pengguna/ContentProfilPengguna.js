@@ -25,7 +25,7 @@ const ContentProfilPengguna = (props) => {
         <h6 className="heading-six main-color" style={{ paddingLeft: "38px", marginTop: "18px" }}>{props.dataPengguna.email}</h6>
         <div className="line-break-profile"></div>
         <h6 className="lead-six secondary-color">Alamat</h6>
-        <h6 className="heading-six main-color" style={{ paddingLeft: "38px", marginTop: "18px" }}>Jl. masfistaosa no.59  </h6>
+        <h6 className="heading-six main-color" style={{ paddingLeft: "38px", marginTop: "18px" }}>{props.lokasi}</h6>
         <div className="line-break-profile"></div>
         <h6 className="lead-six secondary-color">Nomor Telepon</h6>
         <h6 className="heading-six main-color" style={{ paddingLeft: "38px", marginTop: "18px" }}>{props.dataPengguna.phone}</h6>

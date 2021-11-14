@@ -8,6 +8,7 @@ import API from "../api/api"
 const ProfilPengguna = () => {
 
   const [dataPengguna, setDataPengguna] = useState([])
+  const [lokasiPengguna, setLokasiPengguna] = useState("")
 
   useEffect(async () => {
     const token = localStorage.getItem('token')
@@ -17,8 +18,14 @@ const ProfilPengguna = () => {
         Authorization: `Bearer ${token}`
       }
     })
+    const lokasi = {
+      lat: dataPengguna.data.data.lat,
+      long: dataPengguna.data.data.long
+    }
 
+    const getLokasi = await API.post('/api/lokasi', lokasi)
     setDataPengguna(dataPengguna.data.data)
+    setLokasiPengguna(getLokasi.data.data.label)
   }, [])
 
   return (
@@ -32,7 +39,7 @@ const ProfilPengguna = () => {
         </HeadingTitle>
         <img className="img-user" />
         <h3 className="heading-three" style={{ color: "white", textAlign: "center" }}>{dataPengguna.nama}</h3>
-        <ContentProfilPengguna dataPengguna={dataPengguna} />
+        <ContentProfilPengguna dataPengguna={dataPengguna} lokasi={lokasiPengguna} />
       </div>
     </LayoutFixed>
   )

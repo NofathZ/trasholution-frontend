@@ -8,6 +8,7 @@ import API from '../api/api';
 const ProfilTrashpicker = () => {
 
   const [dataTrashpicker, setDataTrashpicker] = useState([])
+  const [lokasiTrashpicker, setLokasiTrashpicker] = useState("")
   const token = localStorage.getItem('token')
 
   useEffect(async () => {
@@ -17,7 +18,14 @@ const ProfilTrashpicker = () => {
       }
     })
 
+    const lokasi = {
+      lat: dataTrashpicker.data.data.lat,
+      long: dataTrashpicker.data.data.long
+    }
+    const getLokasi = await API.post('/api/lokasi', lokasi)
+
     setDataTrashpicker(dataTrashpicker.data.data)
+    setLokasiTrashpicker(getLokasi.data.data.label)
   }, [])
 
   return (
@@ -31,7 +39,7 @@ const ProfilTrashpicker = () => {
         </HeadingTitle>
         <img className="img-user" />
         <h3 className="heading-three" style={{ color: "white", textAlign: "center" }}>{dataTrashpicker.nama}</h3>
-        <ContentProfilTrashpicker />
+        <ContentProfilTrashpicker dataTrashpicker={dataTrashpicker} lokasi={lokasiTrashpicker} />
       </div>
     </LayoutFixed>
   )
