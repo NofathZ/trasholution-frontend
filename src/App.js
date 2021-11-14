@@ -34,8 +34,6 @@ function App() {
 
   const [userData, setUserData] = useState({})
 
-  
-
   return (
     <Router>
       <RegisterContext.Provider value={{ userData, setUserData }}>
