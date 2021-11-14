@@ -11,7 +11,6 @@ const MapTrashpickerDijalan = (props) => {
       setPositionPengguna([props.informasiMap.penjualan.lat_pengguna, props.informasiMap.penjualan.long_pengguna])
       setPositionTrashpicker([props.informasiMap.penjualan.lat_trashpicker, props.informasiMap.penjualan.long_trashpicker])
     }
-    console.log(props.informasiMap.penjualan.lat_pengguna)
   }, [props.informasiMap, props.informasiMap.penjualan])
 
   return (
