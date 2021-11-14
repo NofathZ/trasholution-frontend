@@ -63,7 +63,6 @@ const MenungguTrashpicker = () => {
 
     channel.bind("penjualan-sampah-pengguna-notification", (data) => {
       alert(data.message);
-      console.log(data);
 
       if (data.message == "tunggu" || data.message == "tiba") {
         history.push('/permintaan-diterima')

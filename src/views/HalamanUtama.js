@@ -14,17 +14,6 @@ const HalamanUtama = () => {
   const token = localStorage.getItem('token')
   const nama = localStorage.getItem('nama')
 
-  useEffect(async () => { // trying
-    const token = localStorage.getItem('token')
-    const currentPenjualan = await API.get('/api/p/current-penjualan', {
-      headers: {
-        "Authorization": `Bearer ${token}`
-      }
-    })
-
-    console.log(currentPenjualan)
-  }, [])
-
   return (
     <Layout className="bg-halaman-utama">
       <HeadingTitle>

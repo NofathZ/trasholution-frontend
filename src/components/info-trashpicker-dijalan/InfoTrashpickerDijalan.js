@@ -15,8 +15,6 @@ const InfoTrashpickerDijalan = (props) => {
     })
   }
 
-  console.log(props.detailInformasiPermintaan)
-
   return (
     <div className="info-pengguna-wrapper">
       <MapTrashpickerDijalan informasiMap={props.detailInformasiPermintaan} />
