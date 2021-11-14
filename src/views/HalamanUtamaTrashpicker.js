@@ -13,6 +13,17 @@ const HalamanUtamaTrashpicker = () => {
   const token = localStorage.getItem('token')
   const nama = localStorage.getItem('nama')
 
+  useEffect(async () => { // trying
+    const token = localStorage.getItem('token')
+    const currentPenjualan = await API.get('/api/t/current-penjemputan', {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      }
+    })
+
+    console.log(currentPenjualan)
+  }, [])
+  
   useEffect(async () => {
     const profile = await API.get('/api/t/profile', {
       headers: {

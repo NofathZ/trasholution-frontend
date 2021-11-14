@@ -16,7 +16,7 @@ const HalamanUtama = () => {
 
   useEffect(async () => { // trying
     const token = localStorage.getItem('token')
-    const currentPenjualan = await API.get('/api/t/current-penjemputan', {
+    const currentPenjualan = await API.get('/api/p/current-penjualan', {
       headers: {
         "Authorization": `Bearer ${token}`
       }
