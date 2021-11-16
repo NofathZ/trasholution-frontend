@@ -6,6 +6,7 @@ import "./DetailValidasiSampah.css"
 import { ButtonValid } from '../components/button/ButtonValid';
 import { ButtonInvalid } from '../components/button/ButtonInvalid';
 import { useParams, useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import API from '../api/api';
 
 const DetailValidasiSampah = (props) => {
@@ -31,11 +32,15 @@ const DetailValidasiSampah = (props) => {
 
   const validasiSelesai = async () => {
     const data = await API.get(`/api/t/daftar-permintaan/${id}/selesai`, {
-      headers : {
+      headers: {
         "Authorization": `Bearer ${token}`
       }
     })
     history.push('/trashpicker')
+  }
+
+  const invalidSampah =() => {
+    // history.push(`/trashpicker/edit-sampah-pengguna/${id}`)
   }
 
   return (
@@ -54,7 +59,7 @@ const DetailValidasiSampah = (props) => {
       <ValidasiBox tipeKolom={tipeKolom} daftarSampah={daftarSampah} />
       <div className="button-choice">
         <ButtonValid className="heading-five" onClick={validasiSelesai}>Valid</ButtonValid>
-        <ButtonInvalid className="heading-five">Invalid</ButtonInvalid>
+        <ButtonInvalid className="heading-five" onClick={invalidSampah}>Invalid</ButtonInvalid>
       </div>
     </Layout>
   )

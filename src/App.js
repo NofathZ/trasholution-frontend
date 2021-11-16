@@ -29,6 +29,7 @@ import TerimaPermintaanKondisiDijalan from './views/TerimaPermintaanKondisiDijal
 import HalamanNotifikasi from './views/HalamanNotifikasi'
 import MenungguTrashpicker from './views/MenungguTrashpicker'
 import API from './api/api'
+import EditSampahPengguna from './views/EditSampahPengguna'
 
 function App() {
 
@@ -88,6 +89,9 @@ function App() {
           </ProtectedRouteTrashpicker>
           <ProtectedRouteTrashpicker path="/trashpicker/detail-validasi/:id">
             <DetailValidasiSampah />
+          </ProtectedRouteTrashpicker>
+          <ProtectedRouteTrashpicker path="/trashpicker/edit-sampah-pengguna/:id">
+            <EditSampahPengguna />
           </ProtectedRouteTrashpicker>
           <ProtectedRouteTrashpicker path="/trashpicker/profil-trashpicker">
             <ProfilTrashpicker />

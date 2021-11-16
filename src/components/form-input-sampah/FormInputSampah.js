@@ -68,8 +68,6 @@ const FormInputSampah = () => {
         }
       })
 
-      // seharusnya disini ada set current penjualan (untuk mengubah current yang lama)
-
       history.push('/menunggu-trashpicker')
     }
     catch (err) {
