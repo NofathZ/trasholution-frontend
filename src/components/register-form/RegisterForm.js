@@ -8,7 +8,7 @@ import { RegisterContext } from "../../context/AllContext"
 
 const RegisterForm = () => {
 
-  const [name, setName] = useState("")
+  const [nama, setNama] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [phone, setPhone] = useState(0)
@@ -21,18 +21,23 @@ const RegisterForm = () => {
     e.preventDefault()
     try {
       const postData = {
-        nama: name,
+        nama,
         email,
         phone,
         password,
         regisAs
       }
 
-      const otpSendTo = "+62" + phone.substring(1)
-      await API.get(`/api/send-otp/${otpSendTo}`)
-
-      setUserData(postData)
-      setStatusRedirect(true)
+      if (nama.length <= 100 && password.length >= 8) {
+        const otpSendTo = "+62" + phone.substring(1)
+        await API.get(`/api/send-otp/${otpSendTo}`)
+  
+        setUserData(postData)
+        setStatusRedirect(true)
+      }
+      else {
+        alert("Panjang maksimal nama adalah 100 karakter dan panjang password minimal 8 karakter")
+      }  
     }
     catch (err) {
       console.error(err)
@@ -43,7 +48,7 @@ const RegisterForm = () => {
     <>
       <h5 className="lead-five secondary-color" style={{ textAlign: "center" }}>Register</h5>
       <form onSubmit={handleInput}>
-        <InputForm required={true} placeholder="Nama" type="text" margin="0 0 0 44px" onChange={val => setName(val)}></InputForm>
+        <InputForm required={true} placeholder="Nama" type="text" margin="0 0 0 44px" onChange={val => setNama(val)}></InputForm>
         <InputForm required={true} placeholder="Email" type="email" margin="0 0 0 44px" onChange={val => setEmail(val)}></InputForm>
         <InputForm required={true} placeholder="Kata Sandi" type="password" margin="0 0 0 44px" onChange={val => setPassword(val)}></InputForm>
         <InputForm required={true} placeholder="Nomor Telepon" type="number" margin="0 0 0 44px" onChange={val => setPhone(val)}></InputForm>

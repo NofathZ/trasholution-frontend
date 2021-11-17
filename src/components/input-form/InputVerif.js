@@ -28,6 +28,10 @@ const InputVerif = () => {
           headers: {
             'Content-Type': "application/json"
           }
+        }).catch((err) => {
+          if (err.response) {
+            alert(err.response.data.message)
+          }
         })
         if (resultReg.data.success) {
           history.push('/login')
@@ -37,6 +41,10 @@ const InputVerif = () => {
         const resultReg = await API.post('/api/t/register', userDataReady, {
           headers: {
             'Content-Type': "application/json"
+          }
+        }).catch((err) => {
+          if (err.response) {
+            alert(err.response.data.message)
           }
         })
         if (resultReg.data.success) {
@@ -49,8 +57,11 @@ const InputVerif = () => {
     }
   }
 
-  const resendOTP = () => {
-    console.log("Resend")
+  const resendOTP = async () => {
+    const { phone } = userData
+    const otpSendTo = "+62" + phone.substring(1)
+    await API.get(`/api/send-otp/${otpSendTo}`)
+    handleInput()
   }
 
   return (

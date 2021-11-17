@@ -41,10 +41,14 @@ const LoginForm = () => {
           headers: {
             'Content-Type': "application/json"
           }
+        }).catch((err) => {
+          if (err.response) {
+            alert(err.response.data.message)
+          }
         })
         if (data) {
           await localStorage.setItem("token", data.token);
-          await localStorage.setItem('activeStatus', "false") // semenstara
+          await localStorage.setItem('activeStatus', "false")
           await setRole(data.token)
         }
       }
@@ -52,6 +56,10 @@ const LoginForm = () => {
         const { data } = await API.post('/api/t/login', postData, {
           headers: {
             'Content-Type': "application/json"
+          }
+        }).catch((err) => {
+          if (err.response) {
+            alert(err.response.data.message)
           }
         })
         if (data) {
