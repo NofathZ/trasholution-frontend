@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom"
-import { useEffect } from "react/cjs/react.development"
 import MapTrashpickerDijalan from "../map-trashpicker-dijalan/MapTrashpickerDijalan"
 import API from "../../api/api"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const InfoTrashpickerDijalan = (props) => {
 
