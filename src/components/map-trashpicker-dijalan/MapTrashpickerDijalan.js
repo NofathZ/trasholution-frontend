@@ -6,12 +6,15 @@ const MapTrashpickerDijalan = (props) => {
   const [positionPengguna, setPositionPengguna] = useState([props.dataLokasi.lat_pengguna, props.dataLokasi.long_pengguna])
   const [positionTrashpicker, setPositionTrashpicker] = useState([props.dataLokasi.lat_trashpicker, props.dataLokasi.long_trashpicker])
 
-  // useEffect(() => {
-  //   if (props.dataLokasi) {
-  //     setPositionPengguna([props.dataLokasi.lat_pengguna, props.dataLokasi.long_pengguna])
-  //     setPositionTrashpicker([props.dataLokasi.lat_trashpicker, props.dataLokasi.long_trashpicker])
-  //   }
-  // }, [props.dataLokasi])
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(async function (position) {
+      const locationUser = {
+        "lat": position.coords.latitude,
+        "long": position.coords.longitude
+      }
+      setPositionTrashpicker([locationUser.lat, locationUser.long])
+    });
+  }, [])
 
   return (
     <div className="map-trashpicker-dijalan-box">
