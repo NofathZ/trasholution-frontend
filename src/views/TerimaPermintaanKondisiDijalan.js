@@ -13,14 +13,18 @@ const TerimaPermintaanKondisiDijalan = (props) => {
   const token = localStorage.getItem('token')
   const [detailInformasiPermintaan, setDetailInformasiPermintaan] = useState({})
 
-  useEffect(async () => {
 
+  const coba = async () => {
     const dataDetail = await API.get(`api/t/daftar-permintaan/${id}`, {
       headers: {
         "Authorization": `Bearer ${token}`
       }
     })
     setDetailInformasiPermintaan(dataDetail.data.data) 
+  }
+
+  useEffect(() => {
+    coba()
   }, [])
 
   return (
@@ -31,7 +35,7 @@ const TerimaPermintaanKondisiDijalan = (props) => {
         </svg>
         <h3 className="heading-three main-color">Terima Permintaan</h3>
       </HeadingTitle>
-      <InfoTrashpickerDijalan id={id} detailInformasiPermintaan={detailInformasiPermintaan} />
+      <InfoTrashpickerDijalan id={id} coba={coba} detailInformasiPermintaan={detailInformasiPermintaan} />
     </Layout>
   )
 }

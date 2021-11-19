@@ -25,6 +25,8 @@ const InfoTrashpickerDijalan = (props) => {
         "Authorization": `Bearer ${token}`
       }
     })
+
+    await props.coba()
   }
 
   return (
