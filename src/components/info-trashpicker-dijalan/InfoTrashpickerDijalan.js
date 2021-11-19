@@ -29,7 +29,9 @@ const InfoTrashpickerDijalan = (props) => {
 
   return (
     <div className="info-pengguna-wrapper">
-      <MapTrashpickerDijalan informasiMap={props.detailInformasiPermintaan} />
+      {
+        props.detailInformasiPermintaan && props.detailInformasiPermintaan.penjualan && <MapTrashpickerDijalan dataLokasi={props.detailInformasiPermintaan.penjualan}  />
+      }
       <h6 className="lead-six secondary-color" style={{ marginTop: "21px" }}>Nama Pengguna</h6>
       <h4 className="heading-four secondary-color" style={{ marginTop: "3px" }}>{props.detailInformasiPermintaan.pengguna && props.detailInformasiPermintaan.pengguna.nama}</h4>
       <h6 className="lead-six secondary-color" style={{ marginTop: "12px" }}>Alamat Pengguna</h6>

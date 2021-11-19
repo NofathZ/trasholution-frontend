@@ -7,11 +7,11 @@ const MapTrashpickerDijalan = (props) => {
   const [positionTrashpicker, setPositionTrashpicker] = useState(null)
 
   useEffect(() => {
-    if (props.informasiMap && props.informasiMap.penjualan) {
-      setPositionPengguna([props.informasiMap.penjualan.lat_pengguna, props.informasiMap.penjualan.long_pengguna])
-      setPositionTrashpicker([props.informasiMap.penjualan.lat_trashpicker, props.informasiMap.penjualan.long_trashpicker])
+    if (props.dataLokasi) {
+      setPositionPengguna([props.dataLokasi.lat_pengguna, props.dataLokasi.long_pengguna])
+      setPositionTrashpicker([props.dataLokasi.lat_trashpicker, props.dataLokasi.long_trashpicker])
     }
-  }, [props.informasiMap, props.informasiMap.penjualan])
+  }, [props.dataLokasi])
 
   return (
     <div className="map-trashpicker-dijalan-box">
