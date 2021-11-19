@@ -49,7 +49,7 @@ const FormInputSampah = () => {
         "daftar_sampah": outputList
       }
 
-      navigator.geolocation.getCurrentPosition(function (position) {
+      navigator.geolocation.getCurrentPosition(async function (position) {
         const locationUser = {
           "lat": position.coords.latitude,
           "long": position.coords.longitude

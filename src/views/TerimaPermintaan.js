@@ -12,7 +12,7 @@ const TerimaPermintaan = (props) => {
 
   useEffect(async () => {
 
-    navigator.geolocation.getCurrentPosition(function (position) { // ubah disini tadi
+    navigator.geolocation.getCurrentPosition(async function (position) { // ubah disini tadi
       const locationUser = {
         "lat": position.coords.latitude,
         "long": position.coords.longitude
