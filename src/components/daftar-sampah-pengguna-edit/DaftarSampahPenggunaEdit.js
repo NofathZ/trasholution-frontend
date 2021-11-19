@@ -48,9 +48,6 @@ const DaftarSampahPenggunaEdit = () => {
       e.preventDefault()
 
       const dataReady = {
-        penjualan: {
-          id: parseInt(id)
-        },
         daftar_sampah: outputList
       }
 
