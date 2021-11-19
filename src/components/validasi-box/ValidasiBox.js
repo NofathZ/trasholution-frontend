@@ -22,9 +22,6 @@ const ValidasiBox = (props) => {
         <div className="row-box" key={idx}>
           <span className="lead-seven list-item-validasi">{sampah.sampah.nama}</span>
           <span className="lead-seven list-item-validasi">{sampah.kuantitas} buah</span>
-          <span className="lead-seven list-item-validasi">
-            <button className="lihat-btn">Lihat</button>
-          </span>
         </div>
       ))}
 
@@ -33,8 +30,8 @@ const ValidasiBox = (props) => {
       <div className="row-box">
         <span className="lead-seven list-item-validasi">Jumlah</span>
         <span className="lead-seven list-item-validasi">
-          {props.daftarSampah ? totalKuantitas(props.daftarSampah) : ""} buah</span>
-        <span className="lead-seven list-item-validasi"></span>
+          {props.daftarSampah ? totalKuantitas(props.daftarSampah) : ""} buah
+        </span>
       </div>
     </div>
   )

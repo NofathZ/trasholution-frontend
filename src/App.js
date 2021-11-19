@@ -73,6 +73,9 @@ function App() {
           <ProtectedRoutePengguna path="/saldo">
             <FormPencairanSaldo />
           </ProtectedRoutePengguna>
+          <ProtectedRoutePengguna path="/notifikasi-penjualan-selesai">
+            <HalamanNotifikasi></HalamanNotifikasi>
+          </ProtectedRoutePengguna>
 
           {/* Halaman Trashpicker */}
           <ProtectedRouteTrashpicker path="/trashpicker" exact>
@@ -97,9 +100,7 @@ function App() {
             <ProfilTrashpicker />
           </ProtectedRouteTrashpicker>
 
-          {/* <Route path="/pemberitahuan">
-            <HalamanNotifikasi></HalamanNotifikasi>
-          </Route> */}
+          
 
         </Switch>
       </RegisterContext.Provider>

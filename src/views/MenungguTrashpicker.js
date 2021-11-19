@@ -68,7 +68,7 @@ const MenungguTrashpicker = () => {
         history.push('/permintaan-diterima')
       }
       else if (data.message == "selesai") {
-        history.push('/')
+        history.push('/notifikasi-penjualan-selesai')
       }
     });
 

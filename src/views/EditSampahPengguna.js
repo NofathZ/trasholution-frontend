@@ -3,7 +3,6 @@ import HeadingTitle from '../components/heading-title/HeadingTitle'
 import DaftarSampahPenggunaEdit from '../components/daftar-sampah-pengguna-edit/DaftarSampahPenggunaEdit';
 
 const EditSampahPengguna = () => {
-
   return (
     <Layout>
       <HeadingTitle>

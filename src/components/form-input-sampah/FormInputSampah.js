@@ -81,7 +81,6 @@ const FormInputSampah = () => {
         <div className="row-box-input">
           <span className="lead-seven list-item-input">Nama</span>
           <span className="lead-seven list-item-input">Jumlah</span>
-          <span className="lead-seven list-item-input">Gambar</span>
         </div>
 
         {inputList}

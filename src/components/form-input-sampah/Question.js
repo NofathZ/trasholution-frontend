@@ -21,10 +21,7 @@ const Question = (props) => {
         </select>
       </span>
       <span className="lead-seven list-item-input">
-        <input id={`jumlah-sampah${props.idx}`} className="input-sampah-column" type="number" onChange={output} required />
-      </span>
-      <span className="lead-seven list-item-input">
-        <button type="button" className="lihat-btn">Lihat</button>
+        <input id={`jumlah-sampah${props.idx}`} className="input-sampah-column" type="number" onChange={output} min="0" max="99999" required />
       </span>
     </div>
   )

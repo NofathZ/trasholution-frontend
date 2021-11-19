@@ -14,7 +14,6 @@ const InfoTrashpicker = (props) => {
       {
         props.dataPenjualan.data && props.dataPenjualan.data.trashpicker && props.dataPenjualan.data.trashpicker.lat && props.dataPenjualan.data.trashpicker.long && <MapTrashpicker dataLokasi={props.dataPenjualan.data.penjualan}  />
       }
-      <button className="terima-permintaan-btn heading-five">Telepon</button>
     </div>
   )
 }

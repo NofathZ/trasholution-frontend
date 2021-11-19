@@ -28,7 +28,7 @@ const DetailValidasiSampah = (props) => {
     await setDaftarSampah(dataPermintaan.data.data.daftar_sampah)
   }, [])
 
-  const tipeKolom = ["Nama", "Jumlah Sampah", "Gambar"]
+  const tipeKolom = ["Nama", "Jumlah Sampah"]
 
   const validasiSelesai = async () => {
     const data = await API.get(`/api/t/daftar-permintaan/${id}/selesai`, {
@@ -40,7 +40,7 @@ const DetailValidasiSampah = (props) => {
   }
 
   const invalidSampah =() => {
-    // history.push(`/trashpicker/edit-sampah-pengguna/${id}`)
+    history.push(`/trashpicker/edit-sampah-pengguna/${id}`)
   }
 
   return (
