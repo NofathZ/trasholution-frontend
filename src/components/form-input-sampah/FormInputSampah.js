@@ -55,7 +55,7 @@ const FormInputSampah = () => {
           "long": position.coords.longitude
         }
 
-        API.put('/api/p/update-lokasi', locationUser, {
+        await API.put('/api/p/update-lokasi', locationUser, {
           headers: {
             "Authorization": `Bearer ${token}`
           }

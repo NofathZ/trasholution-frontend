@@ -20,7 +20,7 @@ const TerimaPermintaanKondisiDijalan = (props) => {
         "Authorization": `Bearer ${token}`
       }
     })
-    await setDetailInformasiPermintaan(dataDetail.data.data) 
+    setDetailInformasiPermintaan(dataDetail.data.data) 
   }, [])
 
   return (

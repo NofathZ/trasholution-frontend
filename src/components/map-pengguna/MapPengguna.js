@@ -22,7 +22,7 @@ const MapPengguna = (props) => {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={position} draggable={"true"}></Marker>
+          <Marker position={position} draggable={false}></Marker>
         </MapContainer>
         :
         ""}

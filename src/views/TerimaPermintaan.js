@@ -11,6 +11,20 @@ const TerimaPermintaan = (props) => {
   const [detailInformasiPermintaan, setDetailInformasiPermintaan] = useState([])
 
   useEffect(async () => {
+
+    navigator.geolocation.getCurrentPosition(function (position) { // ubah disini tadi
+      const locationUser = {
+        "lat": position.coords.latitude,
+        "long": position.coords.longitude
+      }
+
+      await API.put('/api/t/update-lokasi', locationUser, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      })
+    });
+
     const dataDetail = await API.get(`/api/t/daftar-permintaan/${id}`, {
       headers: {
         "Authorization": `Bearer ${token}`

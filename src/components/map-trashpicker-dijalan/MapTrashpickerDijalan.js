@@ -21,12 +21,12 @@ const MapTrashpickerDijalan = (props) => {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={positionPengguna} draggable={"false"}>
+          <Marker position={positionPengguna} draggable={false}>
             <Popup>
               Pengguna
             </Popup>
           </Marker>
-          <Marker position={positionTrashpicker} draggable={"false"}>
+          <Marker position={positionTrashpicker} draggable={false}>
             <Popup>
               You
             </Popup>
