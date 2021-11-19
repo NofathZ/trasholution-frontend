@@ -6,15 +6,14 @@ const AuthProtectedRoute = ({ children, ...restOfProps }) => {
   const token = localStorage.getItem('token')
   const role = localStorage.getItem('role')
 
-  var d = new Date(); // for now
-  console.log(d.getHours()) // => 9
+  var d = new Date();
 
   return (
     <>
       {token ?
         role === "pengguna" ? <Redirect to="/trashpicker" /> : <Redirect to="/trashpicker" />
         :
-        d.getHours() >= 7 && d.getHours() <= 18 ?
+        d.getHours() >= 7 && d.getHours() <= 23 ?
           <Route {...restOfProps}>
             {children}
           </Route>

@@ -100,8 +100,6 @@ function App() {
             <ProfilTrashpicker />
           </ProtectedRouteTrashpicker>
 
-          
-
         </Switch>
       </RegisterContext.Provider>
     </Router >

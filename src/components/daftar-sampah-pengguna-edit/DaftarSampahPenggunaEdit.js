@@ -49,13 +49,19 @@ const DaftarSampahPenggunaEdit = () => {
 
       const dataReady = {
         penjualan: {
-          id
+          id: parseInt(id)
         },
         daftar_sampah: outputList
       }
 
       console.log(dataReady)
-      // TINGGAL REQUEST API dengan BODY dataReady
+      await API.post(`/api/t/edit-data-sampah/${id}`, dataReady, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      }).then(resp => {
+        history.push(`/trashpicker/detail-validasi/${id}`)
+      })
     }
     catch (err) {
       console.error(err)

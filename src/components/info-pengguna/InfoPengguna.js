@@ -11,6 +11,20 @@ const InfoPengguna = (props) => {
   const [lokasiPengguna, setLokasiPengguna] = useState("")
 
   useEffect(async () => {
+
+    navigator.geolocation.getCurrentPosition(function (position) { // ubah disini tadi
+      const locationUser = {
+        "lat": position.coords.latitude,
+        "long": position.coords.longitude
+      }
+
+      API.put('/api/t/update-lokasi', locationUser, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      })
+    });
+
     if (props.detailInformasiPermintaan && props.detailInformasiPermintaan.pengguna) {
       const lokasi = {
         lat: props.detailInformasiPermintaan.pengguna.lat,

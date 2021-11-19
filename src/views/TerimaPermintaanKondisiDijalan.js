@@ -15,19 +15,6 @@ const TerimaPermintaanKondisiDijalan = (props) => {
 
   useEffect(async () => {
 
-    navigator.geolocation.getCurrentPosition(function (position) {
-      const locationUser = {
-        "lat": position.coords.latitude,
-        "long": position.coords.longitude
-      }
-
-      API.put('/api/t/update-lokasi', locationUser, {
-        headers: {
-          "Authorization": `Bearer ${token}`
-        }
-      })
-    });
-
     const dataDetail = await API.get(`api/t/daftar-permintaan/${id}`, {
       headers: {
         "Authorization": `Bearer ${token}`

@@ -11,8 +11,6 @@ import API from '../api/api';
 
 const DetailValidasiSampah = (props) => {
 
-  // onclick Valid, trus hit api /selesai
-
   const token = localStorage.getItem("token")
   const { id } = useParams()
   const [daftarSampah, setDaftarSampah] = useState([])
