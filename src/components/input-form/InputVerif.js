@@ -34,6 +34,7 @@ const InputVerif = () => {
           }
         })
         if (resultReg.data.success) {
+          alert("Akun Anda Telah Terdaftar")
           history.push('/login')
         }
       }
@@ -48,6 +49,7 @@ const InputVerif = () => {
           }
         })
         if (resultReg.data.success) {
+          alert("Akun Anda Telah Terdaftar")
           history.push('/login')
         }
       }
