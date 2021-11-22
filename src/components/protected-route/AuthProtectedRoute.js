@@ -13,12 +13,12 @@ const AuthProtectedRoute = ({ children, ...restOfProps }) => {
       {token ?
         role === "pengguna" ? <Redirect to="/trashpicker" /> : <Redirect to="/trashpicker" />
         :
-        d.getHours() >= 1 && d.getHours() <= 24 ?
+        // d.getHours() >= 7 && d.getHours() <= 18 ?
           <Route {...restOfProps}>
             {children}
           </Route>
-          :
-          <Redirect to="/" />
+          // :
+          // <Redirect to="/" />
       }
     </>
   )
