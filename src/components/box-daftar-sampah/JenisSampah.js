@@ -16,7 +16,7 @@ const JenisSampah = (props) => {
           <span className="baris-data lead-eight">{idx + 1}</span>
           <span className="baris-data lead-eight">{sampah.nama}</span>
           <span className="baris-data lead-eight">{sampah.ukuran}</span>
-          <span className="baris-data lead-eight">{sampah.harga}</span>
+          <span className="baris-data lead-eight">Rp. {sampah.harga}</span>
         </div>
       ))}
     </div>
