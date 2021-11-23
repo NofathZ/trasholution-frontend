@@ -24,8 +24,13 @@ const Withdraw = (props) => {
         headers: {
           "Authorization": `Bearer ${token}`
         }
+      }).then(res => {
+        history.push('/')
+      }).catch(err => {
+        if (err.response) {
+          alert(err.response.data.message)
+        }
       })
-      history.push('/')
     }
     catch (err) {
       console.error(err)
