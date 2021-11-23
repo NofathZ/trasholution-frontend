@@ -1,14 +1,23 @@
 import ButtonMenu from "../button/ButtonMenu"
 import { Link } from "react-router-dom"
+import API from "../../api/api"
 
 const MenuBoxTrashpicker = (props) => {
 
-  const logout = () => {
+  const token = localStorage.getItem("token")
+
+  const logout = async () => {
     if (localStorage.getItem('token')) {
       localStorage.removeItem('token')
       localStorage.removeItem('role')
       localStorage.removeItem('nama')
       window.location.reload('/')
+
+      await API.get('/api/t/update-status/offline', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
     }
   }
   

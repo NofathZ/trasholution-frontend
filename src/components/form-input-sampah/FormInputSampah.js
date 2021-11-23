@@ -66,9 +66,15 @@ const FormInputSampah = () => {
         headers: {
           "Authorization": `Bearer ${token}`
         }
+      }).then(res => {
+        history.push('/menunggu-trashpicker')
+      }).catch(err => {
+        if (err.response) {
+          alert("Tidak ada trashpicker yang tersedia")
+          history.push('/')
+        }
       })
 
-      history.push('/menunggu-trashpicker')
     }
     catch (err) {
       console.error(err)
