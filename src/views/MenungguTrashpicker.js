@@ -62,12 +62,12 @@ const MenungguTrashpicker = () => {
     const channel = pusher.subscribe(`private-penjualan-sampah.${currentPenjualan.data.data.penjualan.id}`);
 
     channel.bind("penjualan-sampah-pengguna-notification", (data) => {
-      alert(data.message);
-
       if (data.message == "tunggu" || data.message == "tiba") {
+        alert(data.message);
         history.push('/permintaan-diterima')
       }
       else if (data.message == "selesai") {
+        alert(data.message);
         history.push('/notifikasi-penjualan-selesai')
       }
     });
